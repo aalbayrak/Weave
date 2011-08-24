@@ -33,18 +33,27 @@
 		<mx:Label text="This wizard process allows you to add metadata to existing Weave data tables which adds them to the Universal Data Cube. To begin, select an existing table from the following list:"/>
 		<ui:TreeWithSearch id="treeWithSearch" prompt="Search data tables" click="handleTableSelectionChange()"/>
 	</mx:VBox>
-	<mx:VBox id="selectDimensionOrMeasureColumnPage">
-		<mx:Label text="Select an already imported table to import as a data cube from the following list:"/>
-	</mx:VBox>
+	<mx:ViewStack id="selectDimensionOrMeasureColumnPage">
+		<mx:VBox id="loadingTableMetadata">
+			<mx:Label text="Loading column list..."/>
+		</mx:VBox>
+		<mx:VBox id="loadedTableMetadata">
+			<mx:Label text="Loaded table metadata."/>
+		</mx:VBox>
+	</mx:ViewStack>
 	<mx:Script>
 		<![CDATA[
 			import mx.controls.Alert;
+			import mx.rpc.events.ResultEvent;
+			
 			import weave.services.AdminInterface;
+			import weave.services.WeaveAdminService;
+			import weave.services.beans.AttributeColumnInfo;
 			
 			//variables used by multiple states:
 			
-			// the currently selected table
-			//var currentTable TODO assign this variable and find out type
+			// the metadata entries for each column in the selected table:
+			private var metadataArray:Array = new Array();
 			// the current column in the currently selected table
 			//var currentColumn TODO assign this variable and find out type
 			// the data set that this cube is being added to
@@ -68,8 +77,39 @@
 			// and the wizard state is 'selectTablePage'
 			private function nextForSelectTablePage():void
 			{
+				//show the poor man's "progress indicator" while column list is loading
+				selectDimensionOrMeasureColumnPage.selectedChild = loadingTableMetadata;
 				selectedChild = selectDimensionOrMeasureColumnPage;
+				
+				//load the data, the display will change when it is loaded
+				var tableName:String = treeWithSearch.tree.selectedItem.label;
+				AdminInterface.instance.getDataTableInfo(tableName).addAsyncResponder(handleDataTableInfo, null, tableName);
 			}
+			
+			private function handleDataTableInfo(event:ResultEvent, token:Object = null):void
+			{
+				metadataArray = new Array();
+				var result:Array = event.result as Array;
+				if( result != null )
+				{
+					for( var i:int = 0; i < result.length; i++ )
+					{
+						var item:AttributeColumnInfo = new AttributeColumnInfo(result[i]);
+						item.metadata.connection = item.connection;
+						item.metadata.sqlQuery = item.sqlQuery;
+						metadataArray.push(item.metadata);
+					}
+				}
+				else
+				{
+					var tableName:String = token as String;
+					WeaveAdminService.messageDisplay("Error","Data table not found" + tableName, true);
+					//Alert.show("Data table not found " + tableName, "Error");
+				}
+				selectDimensionOrMeasureColumnPage.selectedChild = loadedTableMetadata;
+				
+			}
+			
 			/*End code for selectTablePage*/
 			
 			/*Begin code for selectDimensionOrMeasureColumnPage*/
