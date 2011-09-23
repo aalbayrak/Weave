@@ -1,0 +1,424 @@
+<Weave encoding="dynamic">
+  <WeaveProperties name="WeaveProperties">
+    <axisFontBold>true</axisFontBold>
+    <axisFontColor>0</axisFontColor>
+    <axisFontFamily>Sophia Nubian</axisFontFamily>
+    <axisFontItalic>false</axisFontItalic>
+    <axisFontSize>11</axisFontSize>
+    <axisFontUnderline>false</axisFontUnderline>
+    <backgroundColor>13421772</backgroundColor>
+    <cssStyleSheetName>weaveStyle.css</cssStyleSheetName>
+    <dashboardMode>false</dashboardMode>
+    <dashedSelectionBox>5,5</dashedSelectionBox>
+    <dataInfoURL/>
+    <debugScreenBounds>false</debugScreenBounds>
+    <enableAboutMenu>true</enableAboutMenu>
+    <enableAdd2DHistogram>true</enableAdd2DHistogram>
+    <enableAddBarChart>true</enableAddBarChart>
+    <enableAddColorLegend>true</enableAddColorLegend>
+    <enableAddColormapHistogram>true</enableAddColormapHistogram>
+    <enableAddCompoundRadViz>true</enableAddCompoundRadViz>
+    <enableAddDataFilter>true</enableAddDataFilter>
+    <enableAddDataSource>true</enableAddDataSource>
+    <enableAddDataTable>true</enableAddDataTable>
+    <enableAddDimensionSliderTool>true</enableAddDimensionSliderTool>
+    <enableAddExampleTool>true</enableAddExampleTool>
+    <enableAddGaugeTool>true</enableAddGaugeTool>
+    <enableAddGrailsDataSource>true</enableAddGrailsDataSource>
+    <enableAddHistogram>true</enableAddHistogram>
+    <enableAddLineChart>true</enableAddLineChart>
+    <enableAddMap>true</enableAddMap>
+    <enableAddPieChart>true</enableAddPieChart>
+    <enableAddPieChartHistogram>true</enableAddPieChartHistogram>
+    <enableAddRadViz>true</enableAddRadViz>
+    <enableAddRamachandranPlot>false</enableAddRamachandranPlot>
+    <enableAddRScriptEditor>true</enableAddRScriptEditor>
+    <enableAddScatterplot>true</enableAddScatterplot>
+    <enableAddThermometerTool>true</enableAddThermometerTool>
+    <enableAddTimeSliderTool>true</enableAddTimeSliderTool>
+    <enableAddWeaveDataSource>true</enableAddWeaveDataSource>
+    <enableBitmapFilters>true</enableBitmapFilters>
+    <enableCascadeAllWindows>true</enableCascadeAllWindows>
+    <enableClearCurrentSelection>true</enableClearCurrentSelection>
+    <enableCloseAllWindows>true</enableCloseAllWindows>
+    <enableCreateSubsets>true</enableCreateSubsets>
+    <enableDataMenu>true</enableDataMenu>
+    <enableDebugAlert>false</enableDebugAlert>
+    <enableDynamicTools>true</enableDynamicTools>
+    <enableEditDataSource>true</enableEditDataSource>
+    <enableExportApplicationScreenshot>true</enableExportApplicationScreenshot>
+    <enableExportDataTable>true</enableExportDataTable>
+    <enableExportToolImage>true</enableExportToolImage>
+    <enableFullscreen>true</enableFullscreen>
+    <enableGeometryProbing>true</enableGeometryProbing>
+    <enableGoFullscreen>true</enableGoFullscreen>
+    <enableManageSavedSelections>true</enableManageSavedSelections>
+    <enableManageSavedSubsets>true</enableManageSavedSubsets>
+    <enableMenuBar>true</enableMenuBar>
+    <enableMinimizeAllWindows>true</enableMinimizeAllWindows>
+    <enableMouseWheel>true</enableMouseWheel>
+    <enableNewDataset>true</enableNewDataset>
+    <enableNewUserWizard>true</enableNewUserWizard>
+    <enablePanelCoordsPercentageMode>true</enablePanelCoordsPercentageMode>
+    <enableProbeAnimation>true</enableProbeAnimation>
+    <enableProbeLines>true</enableProbeLines>
+    <enableRefreshHierarchies>true</enableRefreshHierarchies>
+    <enableRemoveSubsets>true</enableRemoveSubsets>
+    <enableRestoreAllMinimizedWindows>true</enableRestoreAllMinimizedWindows>
+    <enableRightClick>true</enableRightClick>
+    <enableSaveCurrentSelection>true</enableSaveCurrentSelection>
+    <enableSaveCurrentSubset>true</enableSaveCurrentSubset>
+    <enableSearchForRecord>true</enableSearchForRecord>
+    <enableSelectionsMenu>true</enableSelectionsMenu>
+    <enableSessionBookmarks>true</enableSessionBookmarks>
+    <enableSessionEdit>true</enableSessionEdit>
+    <enableSessionMenu>true</enableSessionMenu>
+    <enableShowAllRecords>true</enableShowAllRecords>
+    <enableSubsetControls>true</enableSubsetControls>
+    <enableSubsetsMenu>true</enableSubsetsMenu>
+    <enableTaskbar>true</enableTaskbar>
+    <enableTileAllWindows>true</enableTileAllWindows>
+    <enableToolAttributeEditing>true</enableToolAttributeEditing>
+    <enableToolControls>true</enableToolControls>
+    <enableToolProbe>true</enableToolProbe>
+    <enableToolSelection>true</enableToolSelection>
+    <enableUserPreferences>true</enableUserPreferences>
+    <enableWindowMenu>true</enableWindowMenu>
+    <jriServiceURL>/WeaveServices/JRIService</jriServiceURL>
+    <maxTooltipRecordsShown>1</maxTooltipRecordsShown>
+    <pageTitle>Open Indicators Weave</pageTitle>
+    <panelTitleFontBold>false</panelTitleFontBold>
+    <panelTitleFontColor>16777215</panelTitleFontColor>
+    <panelTitleFontFamily>Verdana</panelTitleFontFamily>
+    <panelTitleFontItalic>false</panelTitleFontItalic>
+    <panelTitleFontSize>10</panelTitleFontSize>
+    <panelTitleFontUnderline>false</panelTitleFontUnderline>
+    <pdbServiceURL>/WeavePDBService/PDBService</pdbServiceURL>
+    <probeInnerGlowAlpha>1</probeInnerGlowAlpha>
+    <probeInnerGlowBlur>5</probeInnerGlowBlur>
+    <probeInnerGlowColor>16777215</probeInnerGlowColor>
+    <probeInnerGlowStrength>10</probeInnerGlowStrength>
+    <probeOuterGlowAlpha>1</probeOuterGlowAlpha>
+    <probeOuterGlowBlur>3</probeOuterGlowBlur>
+    <probeOuterGlowColor>0</probeOuterGlowColor>
+    <probeOuterGlowStrength>3</probeOuterGlowStrength>
+    <probeToolTipBackgroundAlpha>1</probeToolTipBackgroundAlpha>
+    <probeToolTipBackgroundColor>NaN</probeToolTipBackgroundColor>
+    <probeToolTipFontColor>0</probeToolTipFontColor>
+    <rServiceURL>/WeaveServices/RService</rServiceURL>
+    <searchServiceURLs>Wikipedia|http://en.wikipedia.org/wiki/Special:Search?search=
+Google|http://www.google.com/search?q=
+Google Images|http://images.google.com/images?q=
+Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
+    <selectionAlphaAmount>0.5</selectionAlphaAmount>
+    <selectionBlurringAmount>4</selectionBlurringAmount>
+    <shadowAlpha>0.5</shadowAlpha>
+    <shadowAngle>45</shadowAngle>
+    <shadowBlur>4</shadowBlur>
+    <shadowColor>0</shadowColor>
+    <shadowDistance>2</shadowDistance>
+    <showAttributeSelector>true</showAttributeSelector>
+    <showColorController>true</showColorController>
+    <showCopyright>true</showCopyright>
+    <showEquationEditor>true</showEquationEditor>
+    <showKeyTypeInColumnTitle>false</showKeyTypeInColumnTitle>
+    <showProbeToolTipEditor>true</showProbeToolTipEditor>
+    <showVisToolCloseDialog>false</showVisToolCloseDialog>
+    <version>1.0 Beta Nightly Build</version>
+    <windowSnapGridSize>5</windowSnapGridSize>
+  </WeaveProperties>
+  <ColorColumn name="defaultColorColumn">
+    <internalDynamicColumn encoding="dynamic">
+      <GlobalObjectReference name="defaultColorBinColumn"/>
+    </internalDynamicColumn>
+    <ramp encoding="xml">
+      <colorRamp category="basic" name="5-Color" source="OIC">
+        <node color="0xEFF3FF" position="0"/>
+        <node color="0xBDD7E7" position="0.25"/>
+        <node color="0x6BAED6" position="0.5"/>
+        <node color="0x3182BD" position="0.75"/>
+        <node color="0x08519C" position="1"/>
+      </colorRamp>
+    </ramp>
+  </ColorColumn>
+  <BinnedColumn name="defaultColorBinColumn">
+    <binningDefinition encoding="dynamic">
+      <SimpleBinningDefinition>
+        <numberOfBins>10</numberOfBins>
+      </SimpleBinningDefinition>
+    </binningDefinition>
+    <internalDynamicColumn encoding="dynamic">
+      <GlobalObjectReference name="defaultColorDataColumn"/>
+    </internalDynamicColumn>
+  </BinnedColumn>
+  <FilteredColumn name="defaultColorDataColumn">
+    <filter encoding="dynamic">
+      <GlobalObjectReference name="defaultSubsetKeyFilter"/>
+    </filter>
+    <internalDynamicColumn encoding="dynamic">
+      <ReferencedColumn>
+        <dynamicColumnReference encoding="dynamic">
+          <HierarchyColumnReference>
+            <dataSourceName>CSVDataSource</dataSourceName>
+            <hierarchyPath encoding="xml">
+              <hierarchy>
+                <attribute title="Percent Obese 2001" csvColumn="Percent Obese 2001" keyType="CSVDataSource"/>
+              </hierarchy>
+            </hierarchyPath>
+          </HierarchyColumnReference>
+        </dynamicColumnReference>
+      </ReferencedColumn>
+    </internalDynamicColumn>
+  </FilteredColumn>
+  <KeyFilter name="defaultSubsetKeyFilter">
+    <excluded/>
+    <included/>
+    <includeMissingKeys>true</includeMissingKeys>
+    <includeMissingKeyTypes>true</includeMissingKeyTypes>
+  </KeyFilter>
+  <KeySet name="defaultSelectionKeySet"/>
+  <KeySet name="defaultProbeKeySet"/>
+  <LinkableHashMap encoding="dynamic" name="savedSelections"/>
+  <LinkableHashMap encoding="dynamic" name="savedSubsets"/>
+  <CSVDataSource name="CSVDataSource">
+    <attributeHierarchy encoding="xml">
+      <hierarchy>
+        <attribute title="US State FIPS Code" csvColumn="US State FIPS Code" keyType="CSVDataSource"/>
+        <attribute title="State" csvColumn="State" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2007" csvColumn="Percent Obese 2007" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2006" csvColumn="Percent Obese 2006" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2005" csvColumn="Percent Obese 2005" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2004" csvColumn="Percent Obese 2004" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2003" csvColumn="Percent Obese 2003" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2002" csvColumn="Percent Obese 2002" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2001" csvColumn="Percent Obese 2001" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 2000" csvColumn="Percent Obese 2000" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 1999" csvColumn="Percent Obese 1999" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 1998" csvColumn="Percent Obese 1998" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 1997" csvColumn="Percent Obese 1997" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 1996" csvColumn="Percent Obese 1996" keyType="CSVDataSource"/>
+        <attribute title="Percent Obese 1995" csvColumn="Percent Obese 1995" keyType="CSVDataSource"/>
+      </hierarchy>
+    </attributeHierarchy>
+    <csvDataString>US State FIPS Code,State,Percent Obese 2007,Percent Obese 2006,Percent Obese 2005,Percent Obese 2004,Percent Obese 2003,Percent Obese 2002,Percent Obese 2001,Percent Obese 2000,Percent Obese 1999,Percent Obese 1998,Percent Obese 1997,Percent Obese 1996,Percent Obese 1995
+08,Colorado,19.3,18.2,17.8,16.8,16,16.5,14.9,14.2,14.9,14.4,11.8,10.3,10.1
+25,Massachusetts,21.7,20.3,20.7,18.4,16.8,18.3,16.6,16.8,14.7,14.3,14.8,13.1,11.7
+09,Connecticut,21.7,20.6,20.1,19.7,19.1,18,17.9,17.4,15.1,15.5,14.7,13.4,12.5
+44,Rhode Island,21.7,21.4,21,19,18.4,18.5,17.7,17.1,16.8,16.8,13.8,14.3,13.2
+50,Vermont,21.9,21.2,20.2,18.7,19.6,18.9,17.6,18.2,18,14.8,15.9,14.9,14.6
+49,Utah,22.4,21.9,21.2,20.4,20.8,17.5,19.1,19.1,16.7,15.9,15.2,NaN,NaN
+30,Montana,22.6,21.2,21.3,19.7,18.8,18.7,18.8,15.9,15.8,15,14.6,14.3,13.4
+06,California,23.3,23.3,22.7,22.2,23.2,19.2,21.9,19.9,18.7,17.3,16,14.6,15.1
+12,Florida,24.1,23.1,22.8,22.9,19.9,19.4,18.8,18.7,18.6,18,16.1,16.7,17.2
+34,New Jersey,24.1,22.6,22.1,21.9,20.1,19,19.6,18.5,17,15.5,16,13.5,14.5
+56,Wyoming,24.5,23.3,24.2,20.8,20.1,19.5,19.7,18,16.9,15.1,15,15.1,14.3
+32,Nevada,24.6,25,21.2,21.1,21.2,21.6,19.5,17.9,15.8,14,14.1,15.5,13.3
+16,Idaho,25.1,24.1,24.5,20.8,21.8,20.2,20.5,18.9,20,16.4,16.3,16.9,14.2
+33,New Hampshire,25.1,22.4,23.1,21.6,20.2,17.9,19.4,18.1,14.6,15.6,14.2,14.5,15.1
+35,New Mexico,25.1,22.9,21.7,21.5,20.2,19.7,19.7,19.3,17.7,15.2,14.9,14.1,13
+23,Maine,25.2,23.1,22.7,23.4,19.9,20.7,19.5,20,19.4,17.4,16.2,16.1,14.1
+51,Virginia,25.3,25.1,25.1,23.1,21.7,23.8,20.9,18.2,19.3,18.7,16.4,15.9,15.7
+55,Wisconsin,25.3,26.6,24.4,23.2,20.9,21.6,22.4,20,19.9,18.3,16.6,17.1,16
+36,New York,25.5,22.9,22.2,22.1,20.9,20.6,20.3,17.7,17.4,16.3,16,14.5,13.9
+17,Illinois,25.6,25.1,25.1,23,23.7,21.9,21,21.7,20.9,18.5,17.1,17,16.7
+04,Arizona,25.8,22.9,21.1,21.2,20.1,19.6,18.5,19.2,12.3,13.1,12.4,15.1,13.3
+53,Washington,25.9,24.2,23.3,22.2,21.7,21.3,19.3,18.8,18.2,18.1,15.2,15.6,13.9
+27,Minnesota,26,24.7,23.7,22.6,23,22.4,19.9,17.4,15.5,16.2,16.5,14.3,15.3
+24,Maryland,26.3,24.9,24.4,23.9,21.9,19.4,20.5,20.2,18.2,20.5,17.5,17.7,16.3
+41,Oregon,26.3,24.8,23.8,21.2,21.5,20.3,21.1,21.5,19.9,18.3,19.4,16.4,15.2
+31,Nebraska,26.5,26.9,26,23.2,23.9,23.2,20.7,21.1,21,18.3,17,16.3,16.3
+38,North Dakota,27,25.4,25.4,24.6,23.7,23.4,20.4,20.4,21.9,19.2,17,18.4,16.4
+46,South Dakota,27.2,25.4,25.5,23.8,22.9,21.2,21.2,19.8,19.6,15.8,17,14.7,13.9
+18,Indiana,27.4,27.8,27.2,25.5,26,24.1,24.5,21.8,19.9,19.9,21.2,18.6,20.1
+20,Kansas,27.7,25.9,23.9,23.2,22.6,22.8,21.6,20.8,18.9,17.7,14.7,13.4,15.9
+19,Iowa,27.7,25.7,25.4,23.5,23.9,22.9,22.5,21.5,21.5,19.8,19.4,18.7,17.5
+42,Pennsylvania,27.8,24,25.3,24.3,23.8,23.9,22.1,21.2,20.3,19.4,17.5,18.7,16.4
+39,Ohio,28.1,28.4,24.3,25.3,24.9,23,22.4,21.5,20.3,20,17.7,18.9,17.5
+29,Missouri,28.2,27.2,26.9,24.9,23.6,23.2,23.2,22.1,21.7,20.5,19.1,19.2,18.9
+26,Michigan,28.2,28.8,26.2,25.4,25.2,25.4,25,22.4,22.8,21.2,19.3,18.2,18.2
+10,Delaware,28.2,26,23.5,21.1,24,22.4,20.8,16.6,17.5,17.2,18.8,17.7,17.1
+02,Alaska,28.2,26.2,27.4,23.7,23.5,23.4,22.1,21,20.4,21.4,19.7,17.5,19.8
+48,Texas,28.6,26.1,27,25.8,24.6,25.5,24.6,23.1,21.6,20.2,18.7,17.2,15.9
+21,Kentucky,28.7,28,28.6,25.8,25.6,24.4,24.6,23,21.7,20.4,21.8,19.2,16.9
+13,Georgia,28.7,27.1,26.5,24.7,25.2,23.5,22.7,21.5,21.1,19.2,14.4,11.5,13.3
+37,North Carolina,28.7,26.6,25.9,24.2,24,23.5,22.9,21.8,21.5,19.4,18.3,18.1,16.9
+40,Oklahoma,28.8,28.8,26.8,24.9,24.4,22.9,22.6,19.7,21.1,19.5,15.1,16.8,13.5
+45,South Carolina,29,29.4,29.1,25.1,24.5,25.8,22.5,22,20.6,20.6,16.9,18.4,16.7
+05,Arkansas,29.3,26.9,28,26.1,25.2,23.7,22.4,23.3,22.7,19.8,18.1,17.8,17.5
+54,West Virginia,30.3,31,30.6,27.6,27.7,27.6,25.1,23.2,24.6,23.9,20.6,19.9,18.3
+47,Tennessee,30.7,28.8,27.4,27.2,25,24.5,23.4,22.9,20.5,19.2,17.7,17.4,18.4
+22,Louisiana,30.7,27.1,30.8,26.9,24.8,25.5,24,23.6,22.3,21.8,19.6,19.7,17.7
+01,Alabama,30.9,30.5,28.9,28.8,28.4,25.7,24.5,23.9,22.4,21.3,18.2,20.5,18.7
+28,Mississippi,32.6,31.4,30.9,29.5,28.1,26.8,26.5,25,23.2,22.8,22,19.8,19.5</csvDataString>
+    <keyColName/>
+    <keyType>CSVDataSource</keyType>
+    <url/>
+  </CSVDataSource>
+  <LinkableHashMap encoding="dynamic" name="Probed Columns"/>
+  <LinkableHashMap encoding="dynamic" name="Probe Header Columns"/>
+  <ExampleTool name="ExampleTool">
+    <buttonRadius>3</buttonRadius>
+    <children encoding="dynamic">
+      <SimpleInteractiveVisualization name="visualization">
+        <axesAlpha>NaN</axesAlpha>
+        <axesColor>NaN</axesColor>
+        <axesThickness>NaN</axesThickness>
+        <axisFontBold>true</axisFontBold>
+        <axisFontColor>0</axisFontColor>
+        <axisFontFamily>Sophia Nubian</axisFontFamily>
+        <axisFontItalic>false</axisFontItalic>
+        <axisFontSize>11</axisFontSize>
+        <axisFontUnderline>false</axisFontUnderline>
+        <defaultMouseMode>InteractiveVisualization.SELECT_MODE_REPLACE</defaultMouseMode>
+        <enableAutoZoomToExtent>true</enableAutoZoomToExtent>
+        <enableAutoZoomXToNiceNumbers>false</enableAutoZoomXToNiceNumbers>
+        <enableAutoZoomYToNiceNumbers>false</enableAutoZoomYToNiceNumbers>
+        <enableFixedAspectRatio>true</enableFixedAspectRatio>
+        <enableProbe>true</enableProbe>
+        <enableSelection>true</enableSelection>
+        <enableZoomAndPan>false</enableZoomAndPan>
+        <gridLineAlpha>NaN</gridLineAlpha>
+        <gridLineColor>NaN</gridLineColor>
+        <gridLineThickness>NaN</gridLineThickness>
+        <includeNonSelectableLayersInAutoZoom>false</includeNonSelectableLayersInAutoZoom>
+        <layers encoding="dynamic">
+          <SelectablePlotLayer name="plot">
+            <backgroundIsVisible>true</backgroundIsVisible>
+            <layerIsSelectable>true</layerIsSelectable>
+            <layerIsVisible>true</layerIsVisible>
+            <plotter encoding="dynamic">
+              <ExamplePlotter>
+                <data encoding="dynamic">
+                  <ReferencedColumn>
+                    <dynamicColumnReference encoding="dynamic">
+                      <HierarchyColumnReference>
+                        <dataSourceName>CSVDataSource</dataSourceName>
+                        <hierarchyPath encoding="xml">
+                          <hierarchy>
+                            <attribute title="Percent Obese 2001" csvColumn="Percent Obese 2001" keyType="CSVDataSource"/>
+                          </hierarchy>
+                        </hierarchyPath>
+                      </HierarchyColumnReference>
+                    </dynamicColumnReference>
+                  </ReferencedColumn>
+                </data>
+                <fillStyle encoding="dynamic">
+                  <SolidFillStyle>
+                    <alpha>
+                      <defaultValue>1</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </alpha>
+                    <color>
+                      <defaultValue>NaN</defaultValue>
+                      <internalDynamicColumn encoding="dynamic">
+                        <GlobalObjectReference name="defaultColorColumn"/>
+                      </internalDynamicColumn>
+                    </color>
+                    <enabled>
+                      <defaultValue>true</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </enabled>
+                  </SolidFillStyle>
+                </fillStyle>
+                <keySet>
+                  <keyFilter encoding="dynamic">
+                    <GlobalObjectReference name="defaultSubsetKeyFilter"/>
+                  </keyFilter>
+                </keySet>
+                <label encoding="dynamic"/>
+                <labelAngleRatio>0</labelAngleRatio>
+                <lineStyle encoding="dynamic">
+                  <SolidLineStyle>
+                    <alpha>
+                      <defaultValue>0.5</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </alpha>
+                    <caps>
+                      <defaultValue/>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </caps>
+                    <color>
+                      <defaultValue>0</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </color>
+                    <enabled>
+                      <defaultValue>true</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </enabled>
+                    <joints>
+                      <defaultValue/>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </joints>
+                    <miterLimit>
+                      <defaultValue>3</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </miterLimit>
+                    <pixelHinting>
+                      <defaultValue>false</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </pixelHinting>
+                    <scaleMode>
+                      <defaultValue>normal</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </scaleMode>
+                    <weight>
+                      <defaultValue>1</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </weight>
+                  </SolidLineStyle>
+                </lineStyle>
+              </ExamplePlotter>
+            </plotter>
+            <probeFilter encoding="dynamic">
+              <GlobalObjectReference name="defaultProbeKeySet"/>
+            </probeFilter>
+            <selectionFilter encoding="dynamic">
+              <GlobalObjectReference name="defaultSelectionKeySet"/>
+            </selectionFilter>
+            <subsetFilter encoding="dynamic">
+              <GlobalObjectReference name="defaultSubsetKeyFilter"/>
+            </subsetFilter>
+            <useTextBitmapFilters>false</useTextBitmapFilters>
+          </SelectablePlotLayer>
+        </layers>
+        <marginBottom>65</marginBottom>
+        <marginLeft>85</marginLeft>
+        <marginRight>85</marginRight>
+        <marginTop>65</marginTop>
+        <maxZoomLevel>16</maxZoomLevel>
+        <minScreenSize>128</minScreenSize>
+        <minZoomLevel>0</minZoomLevel>
+        <shadowAmount>0</shadowAmount>
+        <zoomBounds>
+          <area>8.4145873320537</area>
+          <xCenter>0</xCenter>
+          <yCenter>0</yCenter>
+        </zoomBounds>
+      </SimpleInteractiveVisualization>
+    </children>
+    <closeable>true</closeable>
+    <draggable>true</draggable>
+    <enableBorders>true</enableBorders>
+    <enableTitle>false</enableTitle>
+    <includeToolAttributesInProbe>true</includeToolAttributesInProbe>
+    <maximizable>true</maximizable>
+    <maximized>true</maximized>
+    <minimizable>true</minimizable>
+    <minimized>false</minimized>
+    <panelBackgroundColor>NaN</panelBackgroundColor>
+    <panelBorderColor>NaN</panelBorderColor>
+    <panelHeight>49.63%</panelHeight>
+    <panelStyleList/>
+    <panelTitle>Pie Chart of Percent Obese 2001</panelTitle>
+    <panelWidth>50%</panelWidth>
+    <panelX>0%</panelX>
+    <panelY>0%</panelY>
+    <pinnable>true</pinnable>
+    <pinnableToBack>false</pinnableToBack>
+    <pinned>false</pinned>
+    <pinnedToBack>false</pinnedToBack>
+    <resizeable>true</resizeable>
+    <showCloseDialog>false</showCloseDialog>
+    <toolTitle/>
+  </ExampleTool>
+</Weave>

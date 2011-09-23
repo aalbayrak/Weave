@@ -131,12 +131,12 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
       <GlobalObjectReference name="defaultColorBinColumn"/>
     </internalDynamicColumn>
     <ramp encoding="xml">
-      <colorRamp name="5-Color" category="basic" source="OIC">
-        <node position="0" color="0xEFF3FF"/>
-        <node position="0.25" color="0xBDD7E7"/>
-        <node position="0.5" color="0x6BAED6"/>
-        <node position="0.75" color="0x3182BD"/>
-        <node position="1" color="0x08519C"/>
+      <colorRamp name="5-Color" source="OIC" category="basic">
+        <node color="0xEFF3FF" position="0"/>
+        <node color="0xBDD7E7" position="0.25"/>
+        <node color="0x6BAED6" position="0.5"/>
+        <node color="0x3182BD" position="0.75"/>
+        <node color="0x08519C" position="1"/>
       </colorRamp>
     </ramp>
   </ColorColumn>
@@ -163,7 +163,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
               <hierarchy>
                 <category name="Data Tables">
                   <category name="obesity-cube">
-                    <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                    <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                   </category>
                 </category>
               </hierarchy>
@@ -229,28 +229,28 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
           <category name="Obesity"/>
           <category name="Obesity Years"/>
           <category name="obesity-cube">
-            <attribute name="ID" dataTable="obesity-cube" keyType="obesity-cube" dataType="obesity-cube"/>
-            <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
-            <attribute name="State" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name"/>
-            <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
-            <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+            <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="obesity-cube" name="ID"/>
+            <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
+            <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
+            <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
+            <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
           </category>
           <category name="Obesity1">
-            <attribute name="fips" dataTable="Obesity1" keyType="Obesity1" dataType="string"/>
-            <attribute name="State" dataTable="Obesity1" keyType="Obesity1" dataType="string"/>
-            <attribute name="PercentObese2007" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2006" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2005" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2004" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2003" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2002" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2001" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese2000" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese1999" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese1998" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese1997" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese1996" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
-            <attribute name="PercentObese1995" dataTable="Obesity1" keyType="Obesity1" dataType="number"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="string" name="fips"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="string" name="State"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2007"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2006"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2005"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2004"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2003"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2002"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2001"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese2000"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese1999"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese1998"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese1997"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese1996"/>
+            <attribute dataTable="Obesity1" keyType="Obesity1" dataType="number" name="PercentObese1995"/>
           </category>
           <category name="Obesity3"/>
           <category name="objectid"/>
@@ -263,56 +263,56 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
           <category name="school_performance_level"/>
           <category name="st99_d00"/>
           <category name="States">
-            <attribute projectionSRS="EPSG:4326" name="States" keyType="US State FIPS Code" dataType="geometry"/>
-            <attribute name="AGE_18_21" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_22_29" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_30_39" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_40_49" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_50_64" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_5_17" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_65_UP" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AGE_UNDER5" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AMERI_ES" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="ASIAN" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AVE_FAM_SZ" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AVE_HH_SZ" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AVG_SALE97" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="AVG_SIZE97" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="BLACK" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="CROP_ACR97" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="FAMILIES" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="FEMALES" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="FHH_CHILD" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="HAWN_PI" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="HISPANIC" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="HOUSEHOLDS" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="HSE_UNITS" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="HSEHLD_1_F" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="HSEHLD_1_M" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MALES" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MARHH_CHD" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MARHH_NO_C" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MED_AGE" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MED_AGE_F" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MED_AGE_M" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MHH_CHILD" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="MULT_RACE" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="NO_FARMS97" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="OTHER" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="OWNER_OCC" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="POP00_SQMI" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="POP07_SQMI" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="POP2000" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="POP2007" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="RENTER_OCC" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="SQMI" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="STATE_ABBR" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string"/>
-            <attribute name="STATE_FIPS" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string"/>
-            <attribute name="STATE_NAME" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string"/>
-            <attribute name="SUB_REGION" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string"/>
-            <attribute name="the_geom_id" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="VACANT" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
-            <attribute name="WHITE" geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number"/>
+            <attribute keyType="US State FIPS Code" dataType="geometry" projectionSRS="EPSG:4326" name="States"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_18_21"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_22_29"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_30_39"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_40_49"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_50_64"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_5_17"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_65_UP"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AGE_UNDER5"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AMERI_ES"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="ASIAN"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AVE_FAM_SZ"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AVE_HH_SZ"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AVG_SALE97"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="AVG_SIZE97"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="BLACK"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="CROP_ACR97"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="FAMILIES"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="FEMALES"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="FHH_CHILD"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="HAWN_PI"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="HISPANIC"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="HOUSEHOLDS"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="HSE_UNITS"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="HSEHLD_1_F"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="HSEHLD_1_M"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MALES"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MARHH_CHD"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MARHH_NO_C"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MED_AGE"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MED_AGE_F"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MED_AGE_M"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MHH_CHILD"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="MULT_RACE"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="NO_FARMS97"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="OTHER"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="OWNER_OCC"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="POP00_SQMI"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="POP07_SQMI"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="POP2000"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="POP2007"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="RENTER_OCC"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="SQMI"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string" name="STATE_ABBR"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string" name="STATE_FIPS"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string" name="STATE_NAME"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="string" name="SUB_REGION"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="the_geom_id"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="VACANT"/>
+            <attribute geometryCollection="States" dataTable="States" keyType="US State FIPS Code" dataType="number" name="WHITE"/>
           </category>
           <category name="StatesHealth"/>
           <category name="StatesHealth Years"/>
@@ -380,7 +380,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <hierarchy>
               <category name="Data Tables">
                 <category name="obesity-cube">
-                  <attribute id="165079" name="State" dataTable="obesity-cube" dataType="US State Name" keyType="obesity-cube"/>
+                  <attribute id="165079" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
                 </category>
               </category>
             </hierarchy>
@@ -398,7 +398,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <hierarchy>
               <category name="Data Tables">
                 <category name="obesity-cube">
-                  <attribute id="165078" name="ID" dataTable="obesity-cube" dataType="obesity-cube" keyType="obesity-cube"/>
+                  <attribute id="165078" dataTable="obesity-cube" keyType="obesity-cube" dataType="obesity-cube" name="ID"/>
                 </category>
               </category>
             </hierarchy>
@@ -414,7 +414,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <hierarchy>
               <category name="Data Tables">
                 <category name="obesity-cube">
-                  <attribute id="165080" name="FIPS2" dataTable="obesity-cube" dataType="US State FIPS Code" keyType="obesity-cube"/>
+                  <attribute id="165080" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                 </category>
               </category>
             </hierarchy>
@@ -430,7 +430,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <hierarchy>
               <category name="Data Tables">
                 <category name="obesity-cube">
-                  <attribute id="165081" name="Year" dataTable="obesity-cube" dataType="Year" keyType="obesity-cube"/>
+                  <attribute id="165081" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                 </category>
               </category>
             </hierarchy>
@@ -446,7 +446,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <hierarchy>
               <category name="Data Tables">
                 <category name="obesity-cube">
-                  <attribute id="165082" name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube"/>
+                  <attribute id="165082" dataTable="obesity-cube" keyType="obesity-cube" name="PercentObese"/>
                 </category>
               </category>
             </hierarchy>
@@ -471,7 +471,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
               <hierarchy>
                 <category name="Data Tables">
                   <category name="obesity-cube">
-                    <attribute dataType="US State FIPS Code" name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube"/>
+                    <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                   </category>
                 </category>
               </hierarchy>
@@ -552,7 +552,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <dataSourceName/>
                           <hierarchyPath encoding="xml">
                             <hierarchy title="Equations">
-                              <attribute name="EquationEditorColumn2" title="custom-geom"/>
+                              <attribute title="custom-geom" name="EquationEditorColumn2"/>
                             </hierarchy>
                           </hierarchyPath>
                         </HierarchyColumnReference>
@@ -650,7 +650,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <dataSourceName/>
                           <hierarchyPath encoding="xml">
                             <hierarchy title="Equations">
-                              <attribute name="EquationEditorColumn2" title="custom-geom"/>
+                              <attribute title="custom-geom" name="EquationEditorColumn2"/>
                             </hierarchy>
                           </hierarchyPath>
                         </HierarchyColumnReference>
@@ -688,7 +688,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute id="165079" name="State" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name"/>
+                                <attribute id="165079" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -707,6 +707,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 </vAlign>
                 <xScreenOffset>0</xScreenOffset>
                 <yScreenOffset>0</yScreenOffset>
+                <zoomToSubset>false</zoomToSubset>
               </GeometryLabelPlotter>
             </plotter>
             <probeFilter encoding="dynamic">
@@ -841,6 +842,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                     <internalDynamicColumn encoding="dynamic"/>
                   </weight>
                 </lineStyle>
+                <maxColumns>1</maxColumns>
+                <reverseOrder>false</reverseOrder>
                 <shapeSize>20</shapeSize>
                 <spatialCallbacks/>
               </ColorBinLegendPlotter>
@@ -868,8 +871,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
         <zoomBounds>
           <xMax>1</xMax>
           <xMin>0</xMin>
-          <yMax>9.5</yMax>
-          <yMin>-0.5</yMin>
+          <yMax>1</yMax>
+          <yMin>0</yMin>
         </zoomBounds>
       </SimpleInteractiveVisualization>
     </children>
@@ -896,175 +899,6 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
     <showCloseDialog>false</showCloseDialog>
     <toolTitle/>
   </ColorBinLegendTool>
-  <DataTableTool name="DataTableTool">
-    <buttonRadius>3</buttonRadius>
-    <children encoding="dynamic">
-      <SimpleInteractiveVisualization name="visualization">
-        <axesAlpha>NaN</axesAlpha>
-        <axesColor>NaN</axesColor>
-        <axesThickness>NaN</axesThickness>
-        <axisFontBold>true</axisFontBold>
-        <axisFontColor>0</axisFontColor>
-        <axisFontFamily>Sophia Nubian</axisFontFamily>
-        <axisFontItalic>false</axisFontItalic>
-        <axisFontSize>11</axisFontSize>
-        <axisFontUnderline>false</axisFontUnderline>
-        <defaultMouseMode>InteractiveVisualization.SELECT_MODE_REPLACE</defaultMouseMode>
-        <enableAutoZoomToExtent>true</enableAutoZoomToExtent>
-        <enableAutoZoomXToNiceNumbers>false</enableAutoZoomXToNiceNumbers>
-        <enableAutoZoomYToNiceNumbers>false</enableAutoZoomYToNiceNumbers>
-        <enableFixedAspectRatio>false</enableFixedAspectRatio>
-        <enableProbe>true</enableProbe>
-        <enableSelection>true</enableSelection>
-        <enableZoomAndPan>true</enableZoomAndPan>
-        <gridLineAlpha>NaN</gridLineAlpha>
-        <gridLineColor>NaN</gridLineColor>
-        <gridLineThickness>NaN</gridLineThickness>
-        <includeNonSelectableLayersInAutoZoom>false</includeNonSelectableLayersInAutoZoom>
-        <layers encoding="dynamic"/>
-        <marginBottom>0</marginBottom>
-        <marginLeft>0</marginLeft>
-        <marginRight>0</marginRight>
-        <marginTop>0</marginTop>
-        <maxZoomLevel>16</maxZoomLevel>
-        <minScreenSize>128</minScreenSize>
-        <minZoomLevel>0</minZoomLevel>
-        <shadowAmount>0</shadowAmount>
-        <zoomBounds>
-          <xMax>NaN</xMax>
-          <xMin>NaN</xMin>
-          <yMax>NaN</yMax>
-          <yMin>NaN</yMin>
-        </zoomBounds>
-      </SimpleInteractiveVisualization>
-    </children>
-    <closeable>true</closeable>
-    <columns encoding="dynamic">
-      <DynamicColumn encoding="dynamic" name="DynamicColumn2">
-        <ReferencedColumn>
-          <dynamicColumnReference encoding="dynamic">
-            <HierarchyColumnReference>
-              <dataSourceName>WeaveDataSource</dataSourceName>
-              <hierarchyPath encoding="xml">
-                <hierarchy>
-                  <category name="Data Tables">
-                    <category name="obesity-cube">
-                      <attribute id="165078" name="ID" dataTable="obesity-cube" dataType="obesity-cube" keyType="obesity-cube"/>
-                    </category>
-                  </category>
-                </hierarchy>
-              </hierarchyPath>
-            </HierarchyColumnReference>
-          </dynamicColumnReference>
-        </ReferencedColumn>
-      </DynamicColumn>
-      <DynamicColumn encoding="dynamic" name="DynamicColumn3">
-        <ReferencedColumn>
-          <dynamicColumnReference encoding="dynamic">
-            <HierarchyColumnReference>
-              <dataSourceName>WeaveDataSource</dataSourceName>
-              <hierarchyPath encoding="xml">
-                <hierarchy>
-                  <category name="Data Tables">
-                    <category name="obesity-cube">
-                      <attribute id="165080" name="FIPS2" dataTable="obesity-cube" dataType="US State FIPS Code" keyType="obesity-cube"/>
-                    </category>
-                  </category>
-                </hierarchy>
-              </hierarchyPath>
-            </HierarchyColumnReference>
-          </dynamicColumnReference>
-        </ReferencedColumn>
-      </DynamicColumn>
-      <DynamicColumn encoding="dynamic" name="DynamicColumn">
-        <ReferencedColumn>
-          <dynamicColumnReference encoding="dynamic">
-            <HierarchyColumnReference>
-              <dataSourceName>WeaveDataSource</dataSourceName>
-              <hierarchyPath encoding="xml">
-                <hierarchy>
-                  <category name="Data Tables">
-                    <category name="obesity-cube">
-                      <attribute id="165079" name="State" dataTable="obesity-cube" dataType="US State Name" keyType="obesity-cube"/>
-                    </category>
-                  </category>
-                </hierarchy>
-              </hierarchyPath>
-            </HierarchyColumnReference>
-          </dynamicColumnReference>
-        </ReferencedColumn>
-      </DynamicColumn>
-      <DynamicColumn encoding="dynamic" name="DynamicColumn4">
-        <ReferencedColumn>
-          <dynamicColumnReference encoding="dynamic">
-            <HierarchyColumnReference>
-              <dataSourceName>WeaveDataSource</dataSourceName>
-              <hierarchyPath encoding="xml">
-                <hierarchy>
-                  <category name="Data Tables">
-                    <category name="obesity-cube">
-                      <attribute id="165081" name="Year" dataTable="obesity-cube" dataType="Year" keyType="obesity-cube"/>
-                    </category>
-                  </category>
-                </hierarchy>
-              </hierarchyPath>
-            </HierarchyColumnReference>
-          </dynamicColumnReference>
-        </ReferencedColumn>
-      </DynamicColumn>
-      <DynamicColumn encoding="dynamic" name="DynamicColumn5">
-        <ReferencedColumn>
-          <dynamicColumnReference encoding="dynamic">
-            <HierarchyColumnReference>
-              <dataSourceName>WeaveDataSource</dataSourceName>
-              <hierarchyPath encoding="xml">
-                <hierarchy>
-                  <category name="Data Tables">
-                    <category name="obesity-cube">
-                      <attribute id="165082" name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube"/>
-                    </category>
-                  </category>
-                </hierarchy>
-              </hierarchyPath>
-            </HierarchyColumnReference>
-          </dynamicColumnReference>
-        </ReferencedColumn>
-      </DynamicColumn>
-    </columns>
-    <columnWidths encoding="dynamic">
-      <LinkableString name="DynamicColumn"/>
-      <LinkableString name="DynamicColumn2"/>
-      <LinkableString name="DynamicColumn3"/>
-      <LinkableString name="DynamicColumn4"/>
-      <LinkableString name="DynamicColumn5"/>
-    </columnWidths>
-    <draggable>true</draggable>
-    <enableBorders>true</enableBorders>
-    <enableTitle>false</enableTitle>
-    <filterByKeyType/>
-    <lockedColumns>0</lockedColumns>
-    <maximizable>true</maximizable>
-    <maximized>false</maximized>
-    <minimizable>true</minimizable>
-    <minimized>false</minimized>
-    <panelBackgroundColor>NaN</panelBackgroundColor>
-    <panelBorderColor>NaN</panelBorderColor>
-    <panelHeight>54.968%</panelHeight>
-    <panelStyleList/>
-    <panelWidth>50.157%</panelWidth>
-    <panelX>0%</panelX>
-    <panelY>0%</panelY>
-    <pinnable>true</pinnable>
-    <pinnableToBack>false</pinnableToBack>
-    <pinned>false</pinned>
-    <pinnedToBack>false</pinnedToBack>
-    <resizeable>true</resizeable>
-    <showCloseDialog>false</showCloseDialog>
-    <showControls>false</showControls>
-    <sortFieldIndex>2</sortFieldIndex>
-    <sortInDescendingOrder>false</sortInDescendingOrder>
-    <toolTitle/>
-  </DataTableTool>
   <HistogramTool name="HistogramTool">
     <buttonRadius>3</buttonRadius>
     <children encoding="dynamic">
@@ -1101,10 +935,10 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <axisLineDataBounds>
                   <xMax>-0.5</xMax>
                   <xMin>-0.5</xMin>
-                  <yMax>49</yMax>
+                  <yMax>98</yMax>
                   <yMin>0</yMin>
                 </axisLineDataBounds>
-                <axisLineMaxValue>49</axisLineMaxValue>
+                <axisLineMaxValue>98</axisLineMaxValue>
                 <axisLineMinValue>0</axisLineMinValue>
                 <forceTickCount>false</forceTickCount>
                 <keySet>
@@ -1142,12 +976,12 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <axisLabelDistance>-10</axisLabelDistance>
                 <axisLabelRelativeAngle>-45</axisLabelRelativeAngle>
                 <axisLineDataBounds>
-                  <xMax>14.5</xMax>
+                  <xMax>13.5</xMax>
                   <xMin>-0.5</xMin>
                   <yMax>0</yMax>
                   <yMin>0</yMin>
                 </axisLineDataBounds>
-                <axisLineMaxValue>14.5</axisLineMaxValue>
+                <axisLineMaxValue>13.5</axisLineMaxValue>
                 <axisLineMinValue>-0.5</axisLineMinValue>
                 <forceTickCount>true</forceTickCount>
                 <keySet>
@@ -1170,8 +1004,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <overrideAxisName/>
                 <showAxisName>true</showAxisName>
                 <spatialCallbacks/>
-                <tickCountRequested>15</tickCountRequested>
-                <tickMaxValue>14</tickMaxValue>
+                <tickCountRequested>14</tickCountRequested>
+                <tickMaxValue>13</tickMaxValue>
                 <tickMinValue>0</tickMinValue>
               </SimpleAxisPlotter>
             </plotter>
@@ -1207,7 +1041,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                       <hierarchy>
                                         <category name="Data Tables">
                                           <category name="obesity-cube">
-                                            <attribute keyType="obesity-cube" dataType="Year" name="Year" dataTable="obesity-cube"/>
+                                            <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                           </category>
                                         </category>
                                       </hierarchy>
@@ -1222,8 +1056,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                     </internalDynamicColumn>
                     <ramp encoding="xml">
                       <colorRamp name="Gray">
-                        <node position="0.0" color="0x808080"/>
-                        <node position="1.0" color="0x808080"/>
+                        <node color="0x808080" position="0.0"/>
+                        <node color="0x808080" position="1.0"/>
                       </colorRamp>
                     </ramp>
                   </ColorColumn>
@@ -1361,9 +1195,9 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
         <minZoomLevel>0</minZoomLevel>
         <shadowAmount>0</shadowAmount>
         <zoomBounds>
-          <xMax>14.5</xMax>
+          <xMax>13.5</xMax>
           <xMin>-0.5</xMin>
-          <yMax>49</yMax>
+          <yMax>98</yMax>
           <yMin>0</yMin>
         </zoomBounds>
       </SimpleInteractiveVisualization>
@@ -1428,11 +1262,11 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <axisLineDataBounds>
                   <xMax>0</xMax>
                   <xMin>0</xMin>
-                  <yMax>14</yMax>
-                  <yMin>0</yMin>
+                  <yMax>2010</yMax>
+                  <yMin>1994</yMin>
                 </axisLineDataBounds>
-                <axisLineMaxValue>14</axisLineMaxValue>
-                <axisLineMinValue>0</axisLineMinValue>
+                <axisLineMaxValue>2010</axisLineMaxValue>
+                <axisLineMinValue>1994</axisLineMinValue>
                 <forceTickCount>false</forceTickCount>
                 <keySet>
                   <keyFilter encoding="dynamic"/>
@@ -1471,8 +1305,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <axisLineDataBounds>
                   <xMax>50</xMax>
                   <xMin>0</xMin>
-                  <yMax>0</yMax>
-                  <yMin>0</yMin>
+                  <yMax>1994</yMax>
+                  <yMin>1994</yMin>
                 </axisLineDataBounds>
                 <axisLineMaxValue>50</axisLineMaxValue>
                 <axisLineMinValue>0</axisLineMinValue>
@@ -1540,7 +1374,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="US State Name" name="State" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -1558,7 +1392,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="Year" name="Year" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -1567,6 +1401,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                     </dynamicColumnReference>
                   </ReferencedColumn>
                 </yColumn>
+                <zoomToSubset>false</zoomToSubset>
               </ScatterPlotPlotter>
             </plotter>
             <probeFilter encoding="dynamic">
@@ -1637,7 +1472,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="US State Name" name="State" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -1655,7 +1490,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="Year" name="Year" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -1758,7 +1593,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="Year" name="Year" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -1767,6 +1602,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                     </dynamicColumnReference>
                   </ReferencedColumn>
                 </yColumn>
+                <zoomToSubset>false</zoomToSubset>
               </ScatterPlotPlotter>
             </plotter>
             <probeFilter encoding="dynamic">
@@ -1816,7 +1652,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="US State Name" name="State" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -1826,6 +1662,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                   </ReferencedColumn>
                 </xColumn>
                 <yColumn encoding="dynamic"/>
+                <zoomToSubset>false</zoomToSubset>
               </ScatterPlotPlotter>
             </plotter>
             <probeFilter encoding="dynamic">
@@ -1868,6 +1705,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <spatialCallbacks/>
                 <xColumn encoding="dynamic"/>
                 <yColumn encoding="dynamic"/>
+                <zoomToSubset>false</zoomToSubset>
               </ScatterPlotPlotter>
             </plotter>
             <probeFilter encoding="dynamic">
@@ -1893,8 +1731,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
         <zoomBounds>
           <xMax>50</xMax>
           <xMin>0</xMin>
-          <yMax>14</yMax>
-          <yMin>0</yMin>
+          <yMax>2010</yMax>
+          <yMin>1994</yMin>
         </zoomBounds>
       </SimpleInteractiveVisualization>
     </children>
@@ -2041,14 +1879,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <plotter encoding="dynamic">
               <ParallelCoordinatesPlotter>
                 <columns encoding="dynamic">
-                  <EquationColumn name="line">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"1995",String,Number)</equation>
+                  <EquationColumn name="line76">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "1,995", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>1995</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>1,995</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2057,7 +1897,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2066,7 +1906,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2075,7 +1915,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2084,7 +1924,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2093,7 +1933,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2104,14 +1944,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line2">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"1996",String,Number)</equation>
+                  <EquationColumn name="line77">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "1,996", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>1996</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>1,996</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2120,7 +1962,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2129,7 +1971,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2138,7 +1980,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2147,7 +1989,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2156,7 +1998,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2167,14 +2009,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line3">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"1997",String,Number)</equation>
+                  <EquationColumn name="line78">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "1,997", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>1997</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>1,997</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2183,7 +2027,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2192,7 +2036,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2201,7 +2045,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2210,7 +2054,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2219,7 +2063,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2230,14 +2074,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line4">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"1998",String,Number)</equation>
+                  <EquationColumn name="line79">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "1,998", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>1998</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>1,998</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2246,7 +2092,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2255,7 +2101,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2264,7 +2110,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2273,7 +2119,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2282,7 +2128,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2293,14 +2139,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line5">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"1999",String,Number)</equation>
+                  <EquationColumn name="line80">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "1,999", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>1999</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>1,999</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2309,7 +2157,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2318,7 +2166,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2327,7 +2175,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2336,7 +2184,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2345,7 +2193,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2356,14 +2204,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line6">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2000",String,Number)</equation>
+                  <EquationColumn name="line81">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,000", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2000</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,000</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2372,7 +2222,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2381,7 +2231,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2390,7 +2240,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2399,7 +2249,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2408,7 +2258,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2419,14 +2269,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line7">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2001",String,Number)</equation>
+                  <EquationColumn name="line82">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,001", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2001</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,001</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2435,7 +2287,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2444,7 +2296,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2453,7 +2305,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2462,7 +2314,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2471,7 +2323,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2482,14 +2334,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line8">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2002",String,Number)</equation>
+                  <EquationColumn name="line83">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,002", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2002</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,002</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2498,7 +2352,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2507,7 +2361,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2516,7 +2370,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2525,7 +2379,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2534,7 +2388,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2545,14 +2399,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line9">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2003",String,Number)</equation>
+                  <EquationColumn name="line84">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,003", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2003</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,003</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2561,7 +2417,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2570,7 +2426,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2579,7 +2435,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2588,7 +2444,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2597,7 +2453,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2608,14 +2464,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line10">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2004",String,Number)</equation>
+                  <EquationColumn name="line85">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,004", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2004</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,004</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2624,7 +2482,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2633,7 +2491,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2642,7 +2500,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2651,7 +2509,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2660,7 +2518,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2671,14 +2529,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line11">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2005",String,Number)</equation>
+                  <EquationColumn name="line86">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,005", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2005</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,005</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2687,7 +2547,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2696,7 +2556,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2705,7 +2565,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2714,7 +2574,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2723,7 +2583,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2734,14 +2594,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line12">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2006",String,Number)</equation>
+                  <EquationColumn name="line87">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,006", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2006</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,006</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2750,7 +2612,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2759,7 +2621,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2768,7 +2630,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2777,7 +2639,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2786,7 +2648,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2797,14 +2659,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line13">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2007",String,Number)</equation>
+                  <EquationColumn name="line88">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,007", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2007</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,007</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2813,7 +2677,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2822,7 +2686,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2831,7 +2695,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2840,7 +2704,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2849,7 +2713,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2860,14 +2724,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line14">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2008",String,Number)</equation>
+                  <EquationColumn name="line89">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,008", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2008</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,008</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2876,7 +2742,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2885,7 +2751,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2894,7 +2760,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2903,7 +2769,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2912,7 +2778,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2923,14 +2789,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </DynamicColumn>
                     </variables>
                   </EquationColumn>
-                  <EquationColumn name="line15">
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2009",String,Number)</equation>
+                  <EquationColumn name="line90">
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,009", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2009</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,009</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2939,7 +2807,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="FIPS2" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2948,7 +2816,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2957,7 +2825,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="Year" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2966,7 +2834,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -2975,7 +2843,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                 <hierarchy>
                                   <category name="Data Tables">
                                     <category name="obesity-cube">
-                                      <attribute name="PercentObese" dataTable="obesity-cube" keyType="obesity-cube" dataType="number"/>
+                                      <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                                     </category>
                                   </category>
                                 </hierarchy>
@@ -2988,8 +2856,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                   </EquationColumn>
                 </columns>
                 <curveType>none</curveType>
-                <displayFilterColumn>true</displayFilterColumn>
-                <filterColumn encoding="dynamic">
+                <enableGroupBy>true</enableGroupBy>
+                <groupBy encoding="dynamic">
                   <ReferencedColumn>
                     <dynamicColumnReference encoding="dynamic">
                       <HierarchyColumnReference>
@@ -2998,7 +2866,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="Year" name="Year" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -3006,27 +2874,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                       </HierarchyColumnReference>
                     </dynamicColumnReference>
                   </ReferencedColumn>
-                </filterColumn>
-                <filterDataType>String</filterDataType>
-                <filterValues>1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009</filterValues>
-                <keyColumn encoding="dynamic">
-                  <ReferencedColumn>
-                    <dynamicColumnReference encoding="dynamic">
-                      <HierarchyColumnReference>
-                        <dataSourceName>WeaveDataSource</dataSourceName>
-                        <hierarchyPath encoding="xml">
-                          <hierarchy>
-                            <category name="Data Tables">
-                              <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2" dataTable="obesity-cube"/>
-                              </category>
-                            </category>
-                          </hierarchy>
-                        </hierarchyPath>
-                      </HierarchyColumnReference>
-                    </dynamicColumnReference>
-                  </ReferencedColumn>
-                </keyColumn>
+                </groupBy>
                 <keySet>
                   <keyFilter encoding="dynamic">
                     <GlobalObjectReference name="defaultSubsetKeyFilter"/>
@@ -3078,6 +2926,25 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 <shapeSize>5</shapeSize>
                 <shapeToDraw>Solid Circle</shapeToDraw>
                 <spatialCallbacks/>
+                <xData encoding="dynamic">
+                  <ReferencedColumn>
+                    <dynamicColumnReference encoding="dynamic">
+                      <HierarchyColumnReference>
+                        <dataSourceName>WeaveDataSource</dataSourceName>
+                        <hierarchyPath encoding="xml">
+                          <hierarchy>
+                            <category name="Data Tables">
+                              <category name="obesity-cube">
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
+                              </category>
+                            </category>
+                          </hierarchy>
+                        </hierarchyPath>
+                      </HierarchyColumnReference>
+                    </dynamicColumnReference>
+                  </ReferencedColumn>
+                </xData>
+                <xValues>"1,995","1,996","1,997","1,998","1,999","2,000","2,001","2,002","2,003","2,004","2,005","2,006","2,007","2,008","2,009"</xValues>
                 <yData encoding="dynamic">
                   <ReferencedColumn>
                     <dynamicColumnReference encoding="dynamic">
@@ -3087,7 +2954,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           <hierarchy>
                             <category name="Data Tables">
                               <category name="obesity-cube">
-                                <attribute keyType="obesity-cube" dataType="number" name="PercentObese" dataTable="obesity-cube"/>
+                                <attribute dataTable="obesity-cube" keyType="obesity-cube" dataType="number" name="PercentObese"/>
                               </category>
                             </category>
                           </hierarchy>
@@ -3136,13 +3003,15 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 </dataX>
                 <dataY encoding="dynamic">
                   <EquationColumn>
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2009",String,Number)</equation>
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,009", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2009</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,009</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -3160,7 +3029,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -3178,7 +3047,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -3223,13 +3092,15 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 </size>
                 <sortColumn encoding="dynamic">
                   <EquationColumn>
-                    <equation>getValueFromFilterColumn(get("key"), get("filter"), get("data"),"2009",String,Number)</equation>
+                    <equation>getValueFromFilterColumn(keyCol, filterCol, dataCol, "2,009", Number)</equation>
                     <keyColumn encoding="dynamic"/>
                     <metadata>
-                      <title>2009</title>
+                      <max>{ getMax(dataCol) }</max>
+                      <min>{ getMin(dataCol) }</min>
+                      <title>2,009</title>
                     </metadata>
                     <variables encoding="dynamic">
-                      <DynamicColumn encoding="dynamic" name="key">
+                      <DynamicColumn encoding="dynamic" name="keyCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -3247,7 +3118,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="filter">
+                      <DynamicColumn encoding="dynamic" name="filterCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -3265,7 +3136,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                           </dynamicColumnReference>
                         </ReferencedColumn>
                       </DynamicColumn>
-                      <DynamicColumn encoding="dynamic" name="data">
+                      <DynamicColumn encoding="dynamic" name="dataCol">
                         <ReferencedColumn>
                           <dynamicColumnReference encoding="dynamic">
                             <HierarchyColumnReference>
@@ -3305,7 +3176,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                                   <hierarchy>
                                     <category name="Data Tables">
                                       <category name="obesity-cube">
-                                        <attribute id="165079" name="State" dataTable="obesity-cube" dataType="US State Name" keyType="obesity-cube"/>
+                                        <attribute id="165079" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
                                       </category>
                                     </category>
                                   </hierarchy>
@@ -3346,6 +3217,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                 </vAlign>
                 <xScreenOffset>5</xScreenOffset>
                 <yScreenOffset>0</yScreenOffset>
+                <zoomToSubset>true</zoomToSubset>
               </TextGlyphPlotter>
             </plotter>
             <probeFilter encoding="dynamic">
@@ -3400,4 +3272,157 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
     <showCloseDialog>false</showCloseDialog>
     <toolTitle/>
   </LineChartTool>
+  <DataTableTool name="DataTableTool">
+    <buttonRadius>3</buttonRadius>
+    <children encoding="dynamic">
+      <SimpleInteractiveVisualization name="visualization">
+        <axesAlpha>NaN</axesAlpha>
+        <axesColor>NaN</axesColor>
+        <axesThickness>NaN</axesThickness>
+        <axisFontBold>true</axisFontBold>
+        <axisFontColor>0</axisFontColor>
+        <axisFontFamily>Sophia Nubian</axisFontFamily>
+        <axisFontItalic>false</axisFontItalic>
+        <axisFontSize>11</axisFontSize>
+        <axisFontUnderline>false</axisFontUnderline>
+        <defaultMouseMode>InteractiveVisualization.SELECT_MODE_REPLACE</defaultMouseMode>
+        <enableAutoZoomToExtent>true</enableAutoZoomToExtent>
+        <enableAutoZoomXToNiceNumbers>false</enableAutoZoomXToNiceNumbers>
+        <enableAutoZoomYToNiceNumbers>false</enableAutoZoomYToNiceNumbers>
+        <enableFixedAspectRatio>false</enableFixedAspectRatio>
+        <enableProbe>true</enableProbe>
+        <enableSelection>true</enableSelection>
+        <enableZoomAndPan>true</enableZoomAndPan>
+        <gridLineAlpha>NaN</gridLineAlpha>
+        <gridLineColor>NaN</gridLineColor>
+        <gridLineThickness>NaN</gridLineThickness>
+        <includeNonSelectableLayersInAutoZoom>false</includeNonSelectableLayersInAutoZoom>
+        <layers encoding="dynamic"/>
+        <marginBottom>0</marginBottom>
+        <marginLeft>0</marginLeft>
+        <marginRight>0</marginRight>
+        <marginTop>0</marginTop>
+        <maxZoomLevel>16</maxZoomLevel>
+        <minScreenSize>128</minScreenSize>
+        <minZoomLevel>0</minZoomLevel>
+        <shadowAmount>0</shadowAmount>
+        <zoomBounds>
+          <xMax>NaN</xMax>
+          <xMin>NaN</xMin>
+          <yMax>NaN</yMax>
+          <yMin>NaN</yMin>
+        </zoomBounds>
+      </SimpleInteractiveVisualization>
+    </children>
+    <closeable>true</closeable>
+    <columns encoding="dynamic">
+      <KeyColumn name="KeyColumn"/>
+      <DynamicColumn encoding="dynamic" name="DynamicColumn3">
+        <ReferencedColumn>
+          <dynamicColumnReference encoding="dynamic">
+            <HierarchyColumnReference>
+              <dataSourceName>WeaveDataSource</dataSourceName>
+              <hierarchyPath encoding="xml">
+                <hierarchy>
+                  <category name="Data Tables">
+                    <category name="obesity-cube">
+                      <attribute id="165080" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State FIPS Code" name="FIPS2"/>
+                    </category>
+                  </category>
+                </hierarchy>
+              </hierarchyPath>
+            </HierarchyColumnReference>
+          </dynamicColumnReference>
+        </ReferencedColumn>
+      </DynamicColumn>
+      <DynamicColumn encoding="dynamic" name="DynamicColumn">
+        <ReferencedColumn>
+          <dynamicColumnReference encoding="dynamic">
+            <HierarchyColumnReference>
+              <dataSourceName>WeaveDataSource</dataSourceName>
+              <hierarchyPath encoding="xml">
+                <hierarchy>
+                  <category name="Data Tables">
+                    <category name="obesity-cube">
+                      <attribute id="165079" dataTable="obesity-cube" keyType="obesity-cube" dataType="US State Name" name="State"/>
+                    </category>
+                  </category>
+                </hierarchy>
+              </hierarchyPath>
+            </HierarchyColumnReference>
+          </dynamicColumnReference>
+        </ReferencedColumn>
+      </DynamicColumn>
+      <DynamicColumn encoding="dynamic" name="DynamicColumn4">
+        <ReferencedColumn>
+          <dynamicColumnReference encoding="dynamic">
+            <HierarchyColumnReference>
+              <dataSourceName>WeaveDataSource</dataSourceName>
+              <hierarchyPath encoding="xml">
+                <hierarchy>
+                  <category name="Data Tables">
+                    <category name="obesity-cube">
+                      <attribute id="165081" dataTable="obesity-cube" keyType="obesity-cube" dataType="Year" name="Year"/>
+                    </category>
+                  </category>
+                </hierarchy>
+              </hierarchyPath>
+            </HierarchyColumnReference>
+          </dynamicColumnReference>
+        </ReferencedColumn>
+      </DynamicColumn>
+      <DynamicColumn encoding="dynamic" name="DynamicColumn5">
+        <ReferencedColumn>
+          <dynamicColumnReference encoding="dynamic">
+            <HierarchyColumnReference>
+              <dataSourceName>WeaveDataSource</dataSourceName>
+              <hierarchyPath encoding="xml">
+                <hierarchy>
+                  <category name="Data Tables">
+                    <category name="obesity-cube">
+                      <attribute id="165082" dataTable="obesity-cube" keyType="obesity-cube" name="PercentObese"/>
+                    </category>
+                  </category>
+                </hierarchy>
+              </hierarchyPath>
+            </HierarchyColumnReference>
+          </dynamicColumnReference>
+        </ReferencedColumn>
+      </DynamicColumn>
+    </columns>
+    <columnWidths encoding="dynamic">
+      <LinkableString name="DynamicColumn"/>
+      <LinkableString name="DynamicColumn2"/>
+      <LinkableString name="DynamicColumn3"/>
+      <LinkableString name="DynamicColumn4"/>
+      <LinkableString name="DynamicColumn5"/>
+      <LinkableString name="KeyColumn"/>
+    </columnWidths>
+    <draggable>true</draggable>
+    <enableBorders>true</enableBorders>
+    <enableTitle>false</enableTitle>
+    <filterByKeyType/>
+    <lockedColumns>0</lockedColumns>
+    <maximizable>true</maximizable>
+    <maximized>false</maximized>
+    <minimizable>true</minimizable>
+    <minimized>false</minimized>
+    <panelBackgroundColor>NaN</panelBackgroundColor>
+    <panelBorderColor>NaN</panelBorderColor>
+    <panelHeight>54.968%</panelHeight>
+    <panelStyleList/>
+    <panelWidth>50.157%</panelWidth>
+    <panelX>0%</panelX>
+    <panelY>0%</panelY>
+    <pinnable>true</pinnable>
+    <pinnableToBack>false</pinnableToBack>
+    <pinned>false</pinned>
+    <pinnedToBack>false</pinnedToBack>
+    <resizeable>true</resizeable>
+    <showCloseDialog>false</showCloseDialog>
+    <showControls>false</showControls>
+    <sortFieldIndex>2</sortFieldIndex>
+    <sortInDescendingOrder>false</sortInDescendingOrder>
+    <toolTitle/>
+  </DataTableTool>
 </Weave>

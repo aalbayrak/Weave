@@ -38,7 +38,10 @@
 			<mx:Label text="Loading column list..."/>
 		</mx:VBox>
 		<mx:VBox id="loadedTableMetadata">
-			<mx:Label text="Loaded table metadata."/>
+			<mx:Label id = "selectDimensionOrMeasureColumnPageLabel"/><!-- text set in updateSelectDimensionOrMeasureColumnPage() -->
+			<mx:Button label="Dimension" toolTip="A column representing a dimension contains identifiers for objects, such as 'Country Name', 'Year' or 'Industry Code' for example." />
+			<mx:Button label="Measure" toolTip="A column representing a measure contains numeric values. Examples include 'Population', 'Average Income', 'Percent Obese', etc." />
+			
 		</mx:VBox>
 	</mx:ViewStack>
 	<mx:Script>
@@ -55,7 +58,7 @@
 			// the metadata entries for each column in the selected table:
 			private var metadataArray:Array = new Array();
 			// the current column in the currently selected table
-			//var currentColumn TODO assign this variable and find out type
+			private var currentColumnIndex:Number;
 			// the data set that this cube is being added to
 			//var dataSet
 			
@@ -99,6 +102,10 @@
 						item.metadata.sqlQuery = item.sqlQuery;
 						metadataArray.push(item.metadata);
 					}
+					
+					currentColumnIndex = 0;
+					updateSelectDimensionOrMeasureColumnPage();
+					selectDimensionOrMeasureColumnPage.selectedChild = loadedTableMetadata;
 				}
 				else
 				{
@@ -106,14 +113,19 @@
 					WeaveAdminService.messageDisplay("Error","Data table not found" + tableName, true);
 					//Alert.show("Data table not found " + tableName, "Error");
 				}
-				selectDimensionOrMeasureColumnPage.selectedChild = loadedTableMetadata;
-				
 			}
 			
 			/*End code for selectTablePage*/
 			
 			/*Begin code for selectDimensionOrMeasureColumnPage*/
-			
+			private function updateSelectDimensionOrMeasureColumnPage():void
+			{
+				//this function is called after currentColumnIndex is changed
+				//and updates the contents of selectDimensionOrMeasureColumnPage
+				//to reflect the new value of currentColumnIndex
+				var colName:String = metadataArray[currentColumnIndex].dataTable;
+				selectDimensionOrMeasureColumnPageLabel.text = "Does the column '"+colName+"' represent a dimension or a measure?";
+			}
 			/*End code for selectDimensionOrMeasureColumnPage*/
 			
 			private function handleCreationComplete():void
