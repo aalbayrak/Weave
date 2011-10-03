@@ -49,33 +49,14 @@
 				super.constructor();
 				// lock dynamic objects into place
 				_plotter = initDefaultPlotter(ExamplePlotter) as ExamplePlotter;
-				
-				visualization.enableAutoZoomToExtent.value = true;
-				visualization.enableFixedAspectRatio.value = true;
-				visualization.enableZoomAndPan.value = false;
 
-				getCallbackCollection(visualization.zoomBounds).addImmediateCallback(this, invalidateAxes);
+				// makes sure the title is updated when the data column changes
 				getCallbackCollection(_plotter).addImmediateCallback(this, invalidateAxes);
-				invalidateAxes();
 				
-				initColumnDefaults(_plotter.data);
-				// see if there is a matching column in probe headers
-				var headers:Array = ProbeTextUtils.probeHeaderColumns.getObjects();
-				for (var i:int = 0; i < headers.length; i++)
-				{
-					if (ColumnUtils.getKeyType(headers[i]) == ColumnUtils.getKeyType(_plotter.data))
-					{
-						_plotter.label.copyLocalObject(headers[i]);
-						break;
-					}
-				}
-
-				toolTitle.addImmediateCallback(this, updateTitle);
+				visualization.marginLeft.value = 20;
+				visualization.marginRight.value = 20;
 				
-				visualization.marginTop.value = 65;
-				visualization.marginBottom.value = 65;
-				visualization.marginLeft.value = 85;
-				visualization.marginRight.value = 85;
+				//visualization.
 			}
 			
 			
@@ -87,11 +68,11 @@
 			
 			override public function getSelectableAttributeNames():Array
 			{
-				return ["Wedge Size","Wedge Color","Label"];
+				return ["Circle X","Circle Color"];
 			}
 			override public function getSelectableAttributes():Array
 			{
-				return [_plotter.data,colorColumn,_plotter.label];
+				return [_plotter.data,colorColumn];
 			}
 			
 			private function invalidateAxes():void
@@ -107,17 +88,9 @@
 		]]>
 	</mx:Script>
 	<ui:ControlPanel>
-		<mx:VBox id="attributesPanel" label="Attributes for Pie Chart">
-			<ui:DynamicColumnComponent visTool="{this}" label="Wedge size" initialize="(event.target as DynamicColumnComponent).dynamicObject = _plotter.data"/>
+		<mx:VBox id="attributesPanel" label="Attributes for Example Tool">
+			<ui:DynamicColumnComponent visTool="{this}" label="X" initialize="(event.target as DynamicColumnComponent).dynamicObject = _plotter.data"/>
 			<ui:DynamicColumnComponent visTool="{this}" label="Color" initialize="(event.target as DynamicColumnComponent).dynamicObject = colorColumn"/>
-			<ui:DynamicColumnComponent visTool="{this}" id="labelColumInput" label="Label Column" initialize="(event.target as DynamicColumnComponent).dynamicObject = _plotter.label"/>
-			<userControls:ControlsSubsetBox>
-				<mx:Label text="Label angle" fontWeight="bold"/>
-				<mx:HSlider id="labelAngleSlider"
-						snapInterval="0.25" minimum="0" maximum="1" liveDragging="true" tickInterval="0.25"
-						dataTipFormatFunction="{function(v:Number):String { return String(Math.round(100*v))+'%' }}"
-						initialize="linkBindableProperty(_plotter.labelAngleRatio, labelAngleSlider, 'value')"/>
-			</userControls:ControlsSubsetBox>
 		</mx:VBox>
 	</ui:ControlPanel>
 </SimpleVisTool>

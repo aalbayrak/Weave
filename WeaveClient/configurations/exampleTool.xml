@@ -132,7 +132,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
       <GlobalObjectReference name="defaultColorBinColumn"/>
     </internalDynamicColumn>
     <ramp encoding="xml">
-      <colorRamp category="basic" name="5-Color" source="OIC">
+      <colorRamp name="5-Color" category="basic" source="OIC">
         <node color="0xEFF3FF" position="0"/>
         <node color="0xBDD7E7" position="0.25"/>
         <node color="0x6BAED6" position="0.5"/>
@@ -162,7 +162,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
             <dataSourceName>CSVDataSource</dataSourceName>
             <hierarchyPath encoding="xml">
               <hierarchy>
-                <attribute title="Percent Obese 2001" csvColumn="Percent Obese 2001" keyType="CSVDataSource"/>
+                <attribute title="Percent Obese 2001" keyType="CSVDataSource" csvColumn="Percent Obese 2001"/>
               </hierarchy>
             </hierarchyPath>
           </HierarchyColumnReference>
@@ -183,21 +183,21 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
   <CSVDataSource name="CSVDataSource">
     <attributeHierarchy encoding="xml">
       <hierarchy>
-        <attribute title="US State FIPS Code" csvColumn="US State FIPS Code" keyType="CSVDataSource"/>
-        <attribute title="State" csvColumn="State" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2007" csvColumn="Percent Obese 2007" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2006" csvColumn="Percent Obese 2006" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2005" csvColumn="Percent Obese 2005" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2004" csvColumn="Percent Obese 2004" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2003" csvColumn="Percent Obese 2003" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2002" csvColumn="Percent Obese 2002" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2001" csvColumn="Percent Obese 2001" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 2000" csvColumn="Percent Obese 2000" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 1999" csvColumn="Percent Obese 1999" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 1998" csvColumn="Percent Obese 1998" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 1997" csvColumn="Percent Obese 1997" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 1996" csvColumn="Percent Obese 1996" keyType="CSVDataSource"/>
-        <attribute title="Percent Obese 1995" csvColumn="Percent Obese 1995" keyType="CSVDataSource"/>
+        <attribute title="US State FIPS Code" keyType="CSVDataSource" csvColumn="US State FIPS Code"/>
+        <attribute title="State" keyType="CSVDataSource" csvColumn="State"/>
+        <attribute title="Percent Obese 2007" keyType="CSVDataSource" csvColumn="Percent Obese 2007"/>
+        <attribute title="Percent Obese 2006" keyType="CSVDataSource" csvColumn="Percent Obese 2006"/>
+        <attribute title="Percent Obese 2005" keyType="CSVDataSource" csvColumn="Percent Obese 2005"/>
+        <attribute title="Percent Obese 2004" keyType="CSVDataSource" csvColumn="Percent Obese 2004"/>
+        <attribute title="Percent Obese 2003" keyType="CSVDataSource" csvColumn="Percent Obese 2003"/>
+        <attribute title="Percent Obese 2002" keyType="CSVDataSource" csvColumn="Percent Obese 2002"/>
+        <attribute title="Percent Obese 2001" keyType="CSVDataSource" csvColumn="Percent Obese 2001"/>
+        <attribute title="Percent Obese 2000" keyType="CSVDataSource" csvColumn="Percent Obese 2000"/>
+        <attribute title="Percent Obese 1999" keyType="CSVDataSource" csvColumn="Percent Obese 1999"/>
+        <attribute title="Percent Obese 1998" keyType="CSVDataSource" csvColumn="Percent Obese 1998"/>
+        <attribute title="Percent Obese 1997" keyType="CSVDataSource" csvColumn="Percent Obese 1997"/>
+        <attribute title="Percent Obese 1996" keyType="CSVDataSource" csvColumn="Percent Obese 1996"/>
+        <attribute title="Percent Obese 1995" keyType="CSVDataSource" csvColumn="Percent Obese 1995"/>
       </hierarchy>
     </attributeHierarchy>
     <csvDataString>US State FIPS Code,State,Percent Obese 2007,Percent Obese 2006,Percent Obese 2005,Percent Obese 2004,Percent Obese 2003,Percent Obese 2002,Percent Obese 2001,Percent Obese 2000,Percent Obese 1999,Percent Obese 1998,Percent Obese 1997,Percent Obese 1996,Percent Obese 1995
@@ -254,8 +254,352 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
     <keyType>CSVDataSource</keyType>
     <url/>
   </CSVDataSource>
-  <LinkableHashMap encoding="dynamic" name="Probed Columns"/>
+  <LinkableHashMap encoding="dynamic" name="Probed Columns">
+    <ReferencedColumn name="ReferencedColumn">
+      <dynamicColumnReference encoding="dynamic">
+        <HierarchyColumnReference>
+          <dataSourceName>CSVDataSource</dataSourceName>
+          <hierarchyPath encoding="xml">
+            <hierarchy>
+              <attribute title="State" keyType="CSVDataSource" csvColumn="State"/>
+            </hierarchy>
+          </hierarchyPath>
+        </HierarchyColumnReference>
+      </dynamicColumnReference>
+    </ReferencedColumn>
+  </LinkableHashMap>
   <LinkableHashMap encoding="dynamic" name="Probe Header Columns"/>
+  <CompoundBarChartTool name="CompoundBarChartTool">
+    <buttonRadius>3</buttonRadius>
+    <children encoding="dynamic">
+      <SimpleInteractiveVisualization name="visualization">
+        <axesAlpha>1</axesAlpha>
+        <axesColor>11579568</axesColor>
+        <axesThickness>10</axesThickness>
+        <axisFontBold>true</axisFontBold>
+        <axisFontColor>0</axisFontColor>
+        <axisFontFamily>Sophia Nubian</axisFontFamily>
+        <axisFontItalic>false</axisFontItalic>
+        <axisFontSize>11</axisFontSize>
+        <axisFontUnderline>false</axisFontUnderline>
+        <defaultMouseMode>InteractiveVisualization.SELECT_MODE_REPLACE</defaultMouseMode>
+        <enableAutoZoomToExtent>true</enableAutoZoomToExtent>
+        <enableAutoZoomXToNiceNumbers>false</enableAutoZoomXToNiceNumbers>
+        <enableAutoZoomYToNiceNumbers>false</enableAutoZoomYToNiceNumbers>
+        <enableFixedAspectRatio>false</enableFixedAspectRatio>
+        <enableProbe>true</enableProbe>
+        <enableSelection>true</enableSelection>
+        <enableZoomAndPan>false</enableZoomAndPan>
+        <gridLineAlpha>1</gridLineAlpha>
+        <gridLineColor>14540253</gridLineColor>
+        <gridLineThickness>1</gridLineThickness>
+        <includeNonSelectableLayersInAutoZoom>false</includeNonSelectableLayersInAutoZoom>
+        <layers encoding="dynamic">
+          <AxisLayer name="yAxis">
+            <isOverlay>false</isOverlay>
+            <layerIsVisible>true</layerIsVisible>
+            <plotter encoding="dynamic">
+              <SimpleAxisPlotter>
+                <axisLabelDistance>-10</axisLabelDistance>
+                <axisLabelRelativeAngle>45</axisLabelRelativeAngle>
+                <axisLineDataBounds>
+                  <xMax>-0.5</xMax>
+                  <xMin>-0.5</xMin>
+                  <yMax>26.5</yMax>
+                  <yMin>0</yMin>
+                </axisLineDataBounds>
+                <axisLineMaxValue>26.5</axisLineMaxValue>
+                <axisLineMinValue>0</axisLineMinValue>
+                <forceTickCount>false</forceTickCount>
+                <keySet>
+                  <keyFilter encoding="dynamic"/>
+                </keySet>
+                <labelDistanceIsVertical>false</labelDistanceIsVertical>
+                <labelHorizontalAlign>right</labelHorizontalAlign>
+                <labelNumberFormatter>
+                  <decimalSeparatorFrom>.</decimalSeparatorFrom>
+                  <decimalSeparatorTo>.</decimalSeparatorTo>
+                  <precision>0</precision>
+                  <rounding>none</rounding>
+                  <thousandsSeparatorFrom>,</thousandsSeparatorFrom>
+                  <thousandsSeparatorTo>,</thousandsSeparatorTo>
+                  <useNegativeSign>true</useNegativeSign>
+                  <useThousandsSeparator>true</useThousandsSeparator>
+                </labelNumberFormatter>
+                <labelTextAlignment>left</labelTextAlignment>
+                <labelVerticalAlign>bottom</labelVerticalAlign>
+                <overrideAxisName/>
+                <showAxisName>true</showAxisName>
+                <tickCountRequested>5</tickCountRequested>
+                <tickMaxValue>NaN</tickMaxValue>
+                <tickMinValue>NaN</tickMinValue>
+              </SimpleAxisPlotter>
+            </plotter>
+            <selectionFilter encoding="dynamic"/>
+          </AxisLayer>
+          <AxisLayer name="xAxis">
+            <isOverlay>false</isOverlay>
+            <layerIsVisible>true</layerIsVisible>
+            <plotter encoding="dynamic">
+              <SimpleAxisPlotter>
+                <axisLabelDistance>-10</axisLabelDistance>
+                <axisLabelRelativeAngle>-45</axisLabelRelativeAngle>
+                <axisLineDataBounds>
+                  <xMax>48.5</xMax>
+                  <xMin>-0.5</xMin>
+                  <yMax>0</yMax>
+                  <yMin>0</yMin>
+                </axisLineDataBounds>
+                <axisLineMaxValue>48.5</axisLineMaxValue>
+                <axisLineMinValue>-0.5</axisLineMinValue>
+                <forceTickCount>false</forceTickCount>
+                <keySet>
+                  <keyFilter encoding="dynamic"/>
+                </keySet>
+                <labelDistanceIsVertical>false</labelDistanceIsVertical>
+                <labelHorizontalAlign>right</labelHorizontalAlign>
+                <labelNumberFormatter>
+                  <decimalSeparatorFrom>.</decimalSeparatorFrom>
+                  <decimalSeparatorTo>.</decimalSeparatorTo>
+                  <precision>0</precision>
+                  <rounding>none</rounding>
+                  <thousandsSeparatorFrom>,</thousandsSeparatorFrom>
+                  <thousandsSeparatorTo>,</thousandsSeparatorTo>
+                  <useNegativeSign>true</useNegativeSign>
+                  <useThousandsSeparator>true</useThousandsSeparator>
+                </labelNumberFormatter>
+                <labelTextAlignment>left</labelTextAlignment>
+                <labelVerticalAlign>top</labelVerticalAlign>
+                <overrideAxisName/>
+                <showAxisName>true</showAxisName>
+                <tickCountRequested>11</tickCountRequested>
+                <tickMaxValue>48</tickMaxValue>
+                <tickMinValue>0</tickMinValue>
+              </SimpleAxisPlotter>
+            </plotter>
+            <selectionFilter encoding="dynamic"/>
+          </AxisLayer>
+          <SelectablePlotLayer name="plot">
+            <backgroundIsVisible>true</backgroundIsVisible>
+            <layerIsSelectable>true</layerIsSelectable>
+            <layerIsVisible>true</layerIsVisible>
+            <plotter encoding="dynamic">
+              <CompoundBarChartPlotter>
+                <barSpacing>0</barSpacing>
+                <chartColors encoding="xml">
+                  <colorRamp dataFormat="qualitative" source="OIC" category="aesthetic" name="Doppler Radar">
+                    <node color="0x04E9E7" position="0"/>
+                    <node color="0x009DF4" position="0.08"/>
+                    <node color="0x0201F4" position="0.16"/>
+                    <node color="0x01FC01" position="0.24"/>
+                    <node color="0x00C400" position="0.32"/>
+                    <node color="0x008C00" position="0.4"/>
+                    <node color="0x0FDF801" position="0.48"/>
+                    <node color="0xF99200" position="0.56"/>
+                    <node color="0xFD0000" position="0.64"/>
+                    <node color="0xBC0000" position="0.72"/>
+                    <node color="0xBC0000" position="0.8"/>
+                    <node color="0xF800FD" position="0.88"/>
+                    <node color="0x9854C6" position="1.0"/>
+                  </colorRamp>
+                </chartColors>
+                <colorColumn>
+                  <defaultValue>NaN</defaultValue>
+                  <internalDynamicColumn encoding="dynamic">
+                    <GlobalObjectReference name="defaultColorColumn"/>
+                  </internalDynamicColumn>
+                </colorColumn>
+                <groupMode>false</groupMode>
+                <heightColumns encoding="dynamic">
+                  <DynamicColumn encoding="dynamic" name="DynamicColumn">
+                    <ReferencedColumn>
+                      <dynamicColumnReference encoding="dynamic">
+                        <HierarchyColumnReference>
+                          <dataSourceName>CSVDataSource</dataSourceName>
+                          <hierarchyPath encoding="xml">
+                            <hierarchy>
+                              <attribute title="Percent Obese 2001" keyType="CSVDataSource" csvColumn="Percent Obese 2001"/>
+                            </hierarchy>
+                          </hierarchyPath>
+                        </HierarchyColumnReference>
+                      </dynamicColumnReference>
+                    </ReferencedColumn>
+                  </DynamicColumn>
+                </heightColumns>
+                <horizontalMode>false</horizontalMode>
+                <keySet>
+                  <keyFilter encoding="dynamic">
+                    <GlobalObjectReference name="defaultSubsetKeyFilter"/>
+                  </keyFilter>
+                </keySet>
+                <lineStyle encoding="dynamic">
+                  <SolidLineStyle>
+                    <alpha>
+                      <defaultValue>0.5</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </alpha>
+                    <caps>
+                      <defaultValue/>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </caps>
+                    <color>
+                      <defaultValue>0</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </color>
+                    <enabled>
+                      <defaultValue>true</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </enabled>
+                    <joints>
+                      <defaultValue/>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </joints>
+                    <miterLimit>
+                      <defaultValue>3</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </miterLimit>
+                    <pixelHinting>
+                      <defaultValue>false</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </pixelHinting>
+                    <scaleMode>
+                      <defaultValue>normal</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </scaleMode>
+                    <weight>
+                      <defaultValue>1</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </weight>
+                  </SolidLineStyle>
+                </lineStyle>
+                <negativeError encoding="dynamic"/>
+                <positiveError encoding="dynamic"/>
+                <showValueLabels>false</showValueLabels>
+                <sortColumn encoding="dynamic">
+                  <ReferencedColumn>
+                    <dynamicColumnReference encoding="dynamic">
+                      <HierarchyColumnReference>
+                        <dataSourceName>CSVDataSource</dataSourceName>
+                        <hierarchyPath encoding="xml">
+                          <hierarchy>
+                            <attribute title="Percent Obese 2001" keyType="CSVDataSource" csvColumn="Percent Obese 2001"/>
+                          </hierarchy>
+                        </hierarchyPath>
+                      </HierarchyColumnReference>
+                    </dynamicColumnReference>
+                  </ReferencedColumn>
+                </sortColumn>
+                <zoomToSubset>true</zoomToSubset>
+              </CompoundBarChartPlotter>
+            </plotter>
+            <probeFilter encoding="dynamic">
+              <GlobalObjectReference name="defaultProbeKeySet"/>
+            </probeFilter>
+            <selectionFilter encoding="dynamic">
+              <GlobalObjectReference name="defaultSelectionKeySet"/>
+            </selectionFilter>
+            <subsetFilter encoding="dynamic">
+              <GlobalObjectReference name="defaultSubsetKeyFilter"/>
+            </subsetFilter>
+            <useTextBitmapFilters>false</useTextBitmapFilters>
+          </SelectablePlotLayer>
+          <PlotLayer name="probeLine">
+            <isOverlay>false</isOverlay>
+            <layerIsVisible>true</layerIsVisible>
+            <plotter encoding="dynamic">
+              <ProbeLinePlotter>
+                <keySet>
+                  <keyFilter encoding="dynamic"/>
+                </keySet>
+                <lineStyle encoding="dynamic">
+                  <SolidLineStyle>
+                    <alpha>
+                      <defaultValue>0.5</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </alpha>
+                    <caps>
+                      <defaultValue/>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </caps>
+                    <color>
+                      <defaultValue>0</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </color>
+                    <enabled>
+                      <defaultValue>true</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </enabled>
+                    <joints>
+                      <defaultValue/>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </joints>
+                    <miterLimit>
+                      <defaultValue>3</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </miterLimit>
+                    <pixelHinting>
+                      <defaultValue>false</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </pixelHinting>
+                    <scaleMode>
+                      <defaultValue>normal</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </scaleMode>
+                    <weight>
+                      <defaultValue>1</defaultValue>
+                      <internalDynamicColumn encoding="dynamic"/>
+                    </weight>
+                  </SolidLineStyle>
+                </lineStyle>
+              </ProbeLinePlotter>
+            </plotter>
+            <selectionFilter encoding="dynamic"/>
+          </PlotLayer>
+        </layers>
+        <marginBottom>80</marginBottom>
+        <marginLeft>80</marginLeft>
+        <marginRight>30</marginRight>
+        <marginTop>30</marginTop>
+        <maxZoomLevel>16</maxZoomLevel>
+        <minScreenSize>128</minScreenSize>
+        <minZoomLevel>0</minZoomLevel>
+        <shadowAmount>0</shadowAmount>
+        <zoomBounds>
+          <xMax>48.5</xMax>
+          <xMin>-0.5</xMin>
+          <yMax>26.5</yMax>
+          <yMin>0</yMin>
+        </zoomBounds>
+      </SimpleInteractiveVisualization>
+    </children>
+    <closeable>true</closeable>
+    <draggable>true</draggable>
+    <enableBorders>true</enableBorders>
+    <enableTitle>false</enableTitle>
+    <includeToolAttributesInProbe>true</includeToolAttributesInProbe>
+    <labelColumn encoding="dynamic"/>
+    <maximizable>true</maximizable>
+    <maximized>false</maximized>
+    <minimizable>true</minimizable>
+    <minimized>false</minimized>
+    <panelBackgroundColor>NaN</panelBackgroundColor>
+    <panelBorderColor>NaN</panelBorderColor>
+    <panelHeight>50.141%</panelHeight>
+    <panelStyleList/>
+    <panelTitle>Bar Chart of Percent Obese 2001</panelTitle>
+    <panelWidth>50.275%</panelWidth>
+    <panelX>49.489%</panelX>
+    <panelY>0%</panelY>
+    <pinnable>true</pinnable>
+    <pinnableToBack>false</pinnableToBack>
+    <pinned>false</pinned>
+    <pinnedToBack>false</pinnedToBack>
+    <resizeable>true</resizeable>
+    <showAllLabels>false</showAllLabels>
+    <showCloseDialog>false</showCloseDialog>
+    <sizeAxisTickCountRequested>5</sizeAxisTickCountRequested>
+    <toolTitle/>
+  </CompoundBarChartTool>
   <ExampleTool name="ExampleTool">
     <buttonRadius>3</buttonRadius>
     <children encoding="dynamic">
@@ -295,7 +639,7 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                         <dataSourceName>CSVDataSource</dataSourceName>
                         <hierarchyPath encoding="xml">
                           <hierarchy>
-                            <attribute title="Percent Obese 2001" csvColumn="Percent Obese 2001" keyType="CSVDataSource"/>
+                            <attribute title="Percent Obese 2001" keyType="CSVDataSource" csvColumn="Percent Obese 2001"/>
                           </hierarchy>
                         </hierarchyPath>
                       </HierarchyColumnReference>
@@ -325,8 +669,6 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
                     <GlobalObjectReference name="defaultSubsetKeyFilter"/>
                   </keyFilter>
                 </keySet>
-                <label encoding="dynamic"/>
-                <labelAngleRatio>0</labelAngleRatio>
                 <lineStyle encoding="dynamic">
                   <SolidLineStyle>
                     <alpha>
@@ -390,8 +732,8 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
         <minZoomLevel>0</minZoomLevel>
         <shadowAmount>0</shadowAmount>
         <zoomBounds>
-          <area>8.4145873320537</area>
-          <xCenter>0</xCenter>
+          <area>59.312631578947</area>
+          <xCenter>20.7</xCenter>
           <yCenter>0</yCenter>
         </zoomBounds>
       </SimpleInteractiveVisualization>
@@ -400,17 +742,16 @@ Google Maps|http://maps.google.com/maps?t=h&amp;q=</searchServiceURLs>
     <draggable>true</draggable>
     <enableBorders>true</enableBorders>
     <enableTitle>false</enableTitle>
-    <includeToolAttributesInProbe>true</includeToolAttributesInProbe>
     <maximizable>true</maximizable>
-    <maximized>true</maximized>
+    <maximized>false</maximized>
     <minimizable>true</minimizable>
     <minimized>false</minimized>
     <panelBackgroundColor>NaN</panelBackgroundColor>
     <panelBorderColor>NaN</panelBorderColor>
-    <panelHeight>49.63%</panelHeight>
+    <panelHeight>50.141%</panelHeight>
     <panelStyleList/>
-    <panelTitle>Pie Chart of Percent Obese 2001</panelTitle>
-    <panelWidth>50%</panelWidth>
+    <panelTitle>Example Tool of Percent Obese 2001</panelTitle>
+    <panelWidth>49.489%</panelWidth>
     <panelX>0%</panelX>
     <panelY>0%</panelY>
     <pinnable>true</pinnable>
