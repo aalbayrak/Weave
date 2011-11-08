@@ -314,25 +314,29 @@ public class DataService extends GenericServlet
 		List<Double> numericData = null;
 		List<String> stringData = null;
 		List<String> secKeys = new ArrayList<String>();
-		String dataType = info.getMetadata(PublicMetadata.DATATYPE);
+		String dataType = info.publicMetadata.get(PublicMetadata.DATATYPE);
 		boolean hasSecondaryKey = true;
 		
 		// use config min,max or param min,max to filter the data
-		String infoMinStr = info.getMetadata(PublicMetadata.MIN);
-		String infoMaxStr = info.getMetadata(PublicMetadata.MAX);
 		double minValue = Double.NEGATIVE_INFINITY;
 		double maxValue = Double.POSITIVE_INFINITY;
 		// first try parsing config min,max values
-		try { minValue = Double.parseDouble(infoMinStr); } catch (Exception e) { }
-		try { maxValue = Double.parseDouble(infoMaxStr); } catch (Exception e) { }
+		try {
+			minValue = Double.parseDouble(info.publicMetadata.get(PublicMetadata.MIN));
+		} catch (Exception e) { }
+		try {
+			maxValue = Double.parseDouble(info.publicMetadata.get(PublicMetadata.MAX));
+		} catch (Exception e) { }
 		// override config min,max with param values if given
 		try {
 			minValue = Double.parseDouble(paramMinStr);
-			infoMinStr = paramMinStr; // this happens only if parseDouble() succeeds
+			// if paramMinStr parses successfully, overwrite returned min metadata
+			info.publicMetadata.put(PublicMetadata.MIN, paramMinStr); // this happens only if parseDouble() succeeds
 		} catch (Exception e) { }
 		try {
 			maxValue = Double.parseDouble(paramMaxStr);
-			infoMaxStr = paramMaxStr; // this happens only if parseDouble() succeeds
+			// if paramMaxStr parses successfully, overwrite returned max metadata
+			info.publicMetadata.put(PublicMetadata.MAX, paramMaxStr); // this happens only if parseDouble() succeeds
 		} catch (Exception e) { }
 		
 		try

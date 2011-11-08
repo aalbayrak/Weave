@@ -19,7 +19,7 @@
     along with Weave.  If not, see <http://www.gnu.org/licenses/>.
 */
 -->
-
+	
 <!---
 @author skolman
 @author kmonico
@@ -32,7 +32,6 @@
 	     layout="absolute"
 		 title="Data Table" xmlns:editors="weave.ui.editors.*"
 		 >
-	
 	<mx:VBox width="100%" height="100%" id="tableArea" verticalGap="0">
 		<mx:HBox id="topControls" horizontalAlign="left" width="100%">
 			<mx:Label text="Key type:"/>
@@ -78,17 +77,21 @@
 			import mx.core.mx_internal;
 			import mx.events.DataGridEvent;
 			import mx.events.ResizeEvent;
+			import mx.rpc.Fault;
 			
 			import weave.Weave;
 			import weave.api.WeaveAPI;
 			import weave.api.copySessionState;
 			import weave.api.core.ILinkableObject;
 			import weave.api.data.IAttributeColumn;
+			import weave.api.data.IColumnWrapper;
+			import weave.api.data.IPrimitiveColumn;
 			import weave.api.data.IQualifiedKey;
 			import weave.api.getCallbackCollection;
 			import weave.api.linkBindableProperty;
 			import weave.api.newLinkableChild;
 			import weave.api.registerLinkableChild;
+			import weave.api.reportError;
 			import weave.core.LinkableBoolean;
 			import weave.core.LinkableHashMap;
 			import weave.core.LinkableNumber;
@@ -98,6 +101,7 @@
 			import weave.data.AttributeColumns.DynamicColumn;
 			import weave.data.AttributeColumns.ImageColumn;
 			import weave.data.AttributeColumns.KeyColumn;
+			import weave.data.AttributeColumns.SecondaryKeyNumColumn;
 			import weave.data.KeySets.KeyFilter;
 			import weave.data.KeySets.KeySet;
 			import weave.ui.AttributeSelectorPanel;
@@ -198,6 +202,7 @@
 			
 			private var attColumns:Array;
 			
+			public const exportKeys:LinkableBoolean = registerLinkableChild(this, new LinkableBoolean(true));
 			public const showControls:LinkableBoolean = registerLinkableChild(this, new LinkableBoolean(false), updateControls);
 			private function updateControls():void
 			{
@@ -248,7 +253,7 @@
 				}
 				catch (e:Error)
 				{
-					WeaveAPI.ErrorManager.reportError(new Error('Error saving exported CSV file.\n' + e.message, e.errorID));
+					reportError(e);
 				}
 			}
 			
@@ -302,7 +307,7 @@
 			//we need to do this to set the arrow to the correct column
 			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
 			{
-				sortCallback();
+//				sortCallback();
 				super.updateDisplayList(unscaledWidth,unscaledHeight);
 			}
 			
@@ -329,8 +334,10 @@
 							columnWidths.removeObject(name);
 					}
 					handleSessionedWidthChange(); // run the callback for the sessionedWidths
-				} catch (error:Error) {
-					WeaveAPI.ErrorManager.reportError(error);
+				}
+				catch (error:Error)
+				{
+					reportError(error);
 				}
 			}
 			
@@ -468,8 +475,34 @@
 				//keyTypeCombo.selectedIndex = selectedIndex;
 			}
 			
+			private function getExportDataProvider():*
+			{
+				for each (var column:IAttributeColumn in columns.getObjects())
+				{
+					while (!(column is IPrimitiveColumn) && column is IColumnWrapper)
+						column = (column as IColumnWrapper).internalColumn;
+					
+					if (column is SecondaryKeyNumColumn)
+					{
+						// dimension slider hack -- relies on previously set SecondaryKeyNumColumn.allKeysHack = true;
+						var key:IQualifiedKey;
+						var keyLookup:Dictionary = new Dictionary(true);
+						for each (column in columns.getObjects())
+							for each (key in column.keys)
+								keyLookup[key] = true;
+						var keys:Array = [];
+						for (var keyObj:* in keyLookup)
+							keys.push({key: keyObj});
+						return keys;
+					}
+				}
+				return dataGrid.dataProvider;
+			}
+			
 			private function generateTableCSV():String
 			{
+				SecondaryKeyNumColumn.allKeysHack = true; // dimension slider hack
+				
 				var records:Array = [];
 				
 				// get the list of column titles
@@ -481,22 +514,29 @@
 				var keyTypeMap:Object = {};
 				
 				// create the data for each column in each selected row
-				for each (var item:Object in dataGrid.dataProvider)
+				var keys:* = getExportDataProvider();
+				for each (var item:Object in keys)
 				{
 					var key:IQualifiedKey = item.key as IQualifiedKey;
 					var record:Object = {};
 					// each record has a property named after the keyType equal to the key value
-					record[key.keyType] = key.localName;
-					keyTypeMap[key.keyType] = true;
+					if (exportKeys.value)
+					{
+						record[key.keyType] = key.localName;
+						keyTypeMap[key.keyType] = true;
+					}
 					// each record has a property named after the column title equal to the value in that column for the current key
+					var dataType:Class = (keys === dataGrid.dataProvider) ? null : String; // dimension slider hack
 					for (i = 0; i < attrCols.length; i++)
-						record[columnTitles[i]] = (attrCols[i] as IAttributeColumn).getValueFromKey(key);
+						record[columnTitles[i]] = (attrCols[i] as IAttributeColumn).getValueFromKey(key, dataType);
 					records.push(record);
 				}
 				
 				// update the list of headers before generating the table
 				for (var keyType:String in keyTypeMap)
 					columnTitles.unshift(keyType);
+
+				SecondaryKeyNumColumn.allKeysHack = false; // dimension slider hack
 				
 				var rows:Array = WeaveAPI.CSVParser.convertRecordsToRows(records, columnTitles);
 				return WeaveAPI.CSVParser.createCSVFromArrays(rows);
@@ -732,6 +772,7 @@
 			<mx:Button label="Add Image Column" click="addImageColumn()" />
 			<mx:CheckBox id="showControlsCheckBox" label="Show controls on panel"/>
 			<mx:CheckBox change="handleKeyColumnCheckBox()" id="showKeyColumnCheckBox" label="Show Key Column"/>
+			<mx:CheckBox label="Export keys with data" creationComplete="linkBindableProperty(exportKeys, event.target, 'selected');"/>
 			<mx:Button label="Export Data..." click="exportCSV()" />
 			<mx:HBox>
 				<mx:Label text="Number of Locked Columns"/>

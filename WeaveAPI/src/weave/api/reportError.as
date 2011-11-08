@@ -34,22 +34,13 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-package weave.api.data
+package weave.api
 {
 	/**
-	 * Constants that refer to standard metadata property names used by the IAttributeColumn.getMetadata() function.
-	 * 
-	 * @author adufilie
+	 * @see weave.api.core.IErrorManager
 	 */
-	public class AttributeColumnMetadata
+	public function reportError(error:Object, faultMessage:String = null, faultContent:Object = null):void
 	{
-		public static const TITLE:String = "title";
-		public static const NUMBER:String = "number";
-		public static const STRING:String = "string";
-		public static const KEY_TYPE:String = "keyType";
-		public static const DATA_TYPE:String = "dataType";
-		public static const MIN:String = "min";
-		public static const MAX:String = "max";
-		public static const PROJECTION_SRS:String = 'projectionSRS';
+		WeaveAPI.ErrorManager.reportError(error, faultMessage, faultContent);
 	}
 }

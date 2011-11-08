@@ -202,9 +202,11 @@ package weave.visualization.layers
 				}
 			}
 			
-			if (!tempScreenBounds.isEmpty())
+			var overrideBounds:Boolean = isFinite(overrideXMin.value) || isFinite(overrideXMax.value)
+										|| isFinite(overrideYMin.value) || isFinite(overrideYMax.value);
+			if (!tempScreenBounds.isEmpty() && !overrideBounds)
 			{
-				var minSize:Number = Math.min(minScreenSize.value, tempScreenBounds.getXCoverage(), tempScreenBounds.getYCoverage());
+				//var minSize:Number = Math.min(minScreenSize.value, tempScreenBounds.getXCoverage(), tempScreenBounds.getYCoverage());
 				
 				if (!tempDataBounds.isUndefined() && !fullDataBounds.isUndefined())
 				{
@@ -234,6 +236,11 @@ package weave.visualization.layers
 			getCallbackCollection(this).resumeCallbacks();
 		}
 		
+		/**
+		 * This function gets the current zoom level as defined in ZoomUtils.
+		 * @return The current zoom level.
+		 * @see weave.utils::ZoomUtils.getZoomLevel
+		 */
 		public function getZoomLevel():Number
 		{
 			zoomBounds.getDataBounds(tempDataBounds);
@@ -244,6 +251,11 @@ package weave.visualization.layers
 			return zoomLevel;
 		}
 		
+		/**
+		 * This function sets the zoom level as defined in ZoomUtils.
+		 * @param newZoomLevel The new zoom level.
+		 * @see weave.utils::ZoomUtils.getZoomLevel
+		 */
 		public function setZoomLevel(newZoomLevel:Number):void
 		{
 			var currentZoomLevel:Number = getZoomLevel();
