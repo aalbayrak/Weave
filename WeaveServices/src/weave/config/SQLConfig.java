@@ -102,8 +102,7 @@ public class SQLConfig
 		}
 		catch (Exception e)
 		{
-			// do nothing if schema creation fails -- temporary workaround for
-			// postgresql issue
+			// do nothing if schema creation fails -- temporary workaround for postgresql issue
 			// e.printStackTrace();
 		}
 		initSQLTables();
@@ -311,14 +310,14 @@ public class SQLConfig
             Integer uniq_id = null; 
             try {
                 Connection conn = getConnection();
-                Map<String,Object> dummyProp = new HashMap<String,Object>();
-                dummyProp.put(DESCRIPTION, description);
-                uniq_id = SQLUtils.insertRowReturnID(conn, dbInfo.schema, table_desc, dummyProp);
+                Map<String,Object> record = new HashMap<String,Object>();
+                record.put(DESCRIPTION, description);
+                uniq_id = SQLUtils.insertRowReturnID(conn, dbInfo.schema, table_desc, record);
                 // If we made it this far, we have a new unique ID in the description table. Now let's build the info we need to do the necessary row inserts...
-                for (Entry<String,String> keyvalpair : properties.entrySet())
+                for (Entry<String,String> entry : properties.entrySet())
                 {
-                    String key = keyvalpair.getKey();
-                    String val = keyvalpair.getValue();
+                    String key = entry.getKey();
+                    String val = entry.getValue();
                     setProperty(uniq_id, key, val);
                 } 
             }
