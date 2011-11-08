@@ -22,6 +22,7 @@ import java.rmi.RemoteException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import weave.config.ISQLConfig.AttributeColumnInfo;
 import weave.config.SQLConfigUtils.InvalidParameterException;
 import weave.utils.DebugTimer;
 import weave.utils.ListUtils;
@@ -36,9 +37,9 @@ import org.w3c.dom.*;
  */
 
 public class DatabaseConfig
-		implements ISQLConfig
+		implements IDeprecatedSQLConfig
 {
-	private DatabaseConfigInfo dbInfo = null;
+	private DeprecatedDatabaseConfigInfo dbInfo = null;
 
 	private Connection _lastConnection = null; // do not use this variable directly -- use getConnection() instead.
 
@@ -65,11 +66,11 @@ public class DatabaseConfig
 	 * @throws SQLException
 	 * @throws InvalidParameterException
 	 */
-	public DatabaseConfig(ISQLConfig connectionConfig)
+	public DatabaseConfig(IDeprecatedSQLConfig connectionConfig)
 			throws RemoteException, SQLException, InvalidParameterException
 	{
 		// save original db config info
-		dbInfo = connectionConfig.getDatabaseConfigInfo();
+		dbInfo = (DeprecatedDatabaseConfigInfo)connectionConfig.getDatabaseConfigInfo();
 		if (dbInfo == null || dbInfo.schema == null || dbInfo.schema.length() == 0)
 			throw new InvalidParameterException("DatabaseConfig: Schema not specified.");
 		if (dbInfo.geometryConfigTable == null || dbInfo.geometryConfigTable.length() == 0)
@@ -158,7 +159,7 @@ public class DatabaseConfig
 	{
 		// list column names
 		List<String> columnNames = new Vector<String>();
-		for (String value : PublicMetadata.names)
+		for (String value : IDeprecatedSQLConfig.PUBLIC_METADATA_NAMES)
 			columnNames.add(value);
 		columnNames.add(PrivateMetadata.CONNECTION);
 		// list corresponding column types
@@ -202,7 +203,7 @@ public class DatabaseConfig
 
 	// This private ISQLConfig is for managing connections because
 	// the connection info shouldn't be stored in the database.
-	private ISQLConfig connectionConfig = null;
+	private IDeprecatedSQLConfig connectionConfig = null;
 
 	// these functions are just passed to the private connectionConfig
 	public Document getDocument() throws RemoteException
@@ -427,15 +428,16 @@ public class DatabaseConfig
 		return null;
 	}
 
-	public void addAttributeColumn(AttributeColumnInfo info) throws RemoteException
+	public int addAttributeColumn(AttributeColumnInfo info) throws RemoteException
 	{
 		try
 		{
 			// forwards compatibility: filter out geometry columns
 			if (DataType.GEOMETRY.equalsIgnoreCase(info.publicMetadata.get(PublicMetadata.DATATYPE)))
-				return;
+				return -1;
 			// insert all the info into the sql table
 			SQLUtils.insertRow(getConnection(), dbInfo.schema, dbInfo.dataConfigTable, new HashMap<String, Object>(info.getAllMetadata()));
+			return -1;
 		}
 		catch (Exception e)
 		{
@@ -451,6 +453,21 @@ public class DatabaseConfig
 		return getAttributeColumnInfo(metadataQueryParams);
 	}
 
+	synchronized public AttributeColumnInfo getAttributeColumnInfo(int _) throws RemoteException
+	{
+		throw new RemoteException("Not implemented");
+	}
+	synchronized public void removeAttributeColumnInfo(int _) throws RemoteException
+	{
+		throw new RemoteException("Not implemented");
+	}
+	synchronized public List<AttributeColumnInfo> getAttributeColumnInfo(Map<String, String> metadataQueryParams, Map<String, String> privateQueryParams) throws RemoteException
+	{
+		Map<String, String> all = new HashMap<String, String>();
+		all.putAll(metadataQueryParams);
+		all.putAll(privateQueryParams);
+		return getAttributeColumnInfo(all);
+	}
 	/**
 	 * @return A list of AttributeColumnInfo objects having info that matches the given parameters.
 	 */
@@ -467,7 +484,7 @@ public class DatabaseConfig
 			for (int i = 0; i < records.size(); i++)
 			{
 				Map<String, String> metadata = records.get(i);
-				String geomName = metadata.remove(PublicMetadata.GEOMETRYCOLLECTION); // remove deprecated property from metadata
+				String geomName = metadata.remove(IDeprecatedSQLConfig.GEOMETRYCOLLECTION); // remove deprecated property from metadata
 				// special case -- derive keyType from geometryCollection if keyType is missing
 				if (metadata.get(PublicMetadata.KEYTYPE).length() == 0)
 				{

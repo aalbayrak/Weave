@@ -513,7 +513,7 @@ public class AdminService extends GenericServlet
 			// migrate from in-memory xmlConfig to the db
 			//count = SQLConfigUtils.migrateSQLConfig(xmlConfig, new DatabaseConfig(xmlConfig));
 			ISQLConfig oldImpl = new DatabaseConfig(xmlConfig);
-			ISQLConfig newImpl = new SQLConfig(xmlConfig);
+			SQLConfig newImpl = new SQLConfig(xmlConfig);
 			count = SQLConfigUtils.migrateSQLConfig(oldImpl, newImpl);
 			
 			// TODO clean up this test code
@@ -525,9 +525,9 @@ public class AdminService extends GenericServlet
 			info2.geometryConfigTable = geometryConfigTable;
 			// save db config info to in-memory xmlConfig
 			xmlConfig2.setDatabaseConfigInfo(info2);
-			ISQLConfig oldImpl2 = new DatabaseConfig(xmlConfig2);
+			SQLConfig newImpl2 = new SQLConfig(xmlConfig2);
 			
-			count = SQLConfigUtils.migrateSQLConfig(newImpl, oldImpl2);
+			count = SQLConfigUtils.migrateSQLConfig(newImpl, newImpl2);
 		}
 		catch (Exception e)
 		{

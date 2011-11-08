@@ -23,15 +23,19 @@ import java.rmi.RemoteException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Savepoint;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import weave.config.ISQLConfig.AttributeColumnInfo;
 import weave.config.ISQLConfig.ConnectionInfo;
-import weave.config.ISQLConfig.GeometryCollectionInfo;
+import weave.config.ISQLConfig.DataType;
+import weave.config.ISQLConfig.PrivateMetadata;
+import weave.config.ISQLConfig.PublicMetadata;
 import weave.utils.DebugTimer;
-import weave.utils.ListUtils;
 import weave.utils.SQLResult;
 import weave.utils.SQLUtils;
 
@@ -194,6 +198,60 @@ public class SQLConfigUtils
 		
 		return result;
 	}
+
+	@Deprecated public String[] getGeometryCollectionNames(ISQLConfig config, String connectionName) throws RemoteException
+	{
+		List<AttributeColumnInfo> infoList;
+		Map<String,String> publicParams = new HashMap<String,String>();
+		publicParams.put(PublicMetadata.DATATYPE, DataType.GEOMETRY);
+		if (connectionName != null)
+		{
+			Map<String,String> privateParams = new HashMap<String,String>();
+			privateParams.put(PrivateMetadata.CONNECTION, connectionName);
+			infoList = config.getAttributeColumnInfo(publicParams, privateParams);
+		}
+		else
+		{
+			infoList = config.getAttributeColumnInfo(publicParams);
+		}
+		Set<String> nameSet = new HashSet<String>();
+		for (AttributeColumnInfo info : infoList)
+			nameSet.add(info.publicMetadata.get(PublicMetadata.NAME));
+		String[] names = nameSet.toArray(new String[0]);
+		Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
+		return names;
+	}
+	
+	@Deprecated public String[] getDataTableNames(ISQLConfig config, String connectionName) throws RemoteException
+	{
+		List<AttributeColumnInfo> infoList;
+		Map<String,String> publicParams = new HashMap<String,String>();
+		if (connectionName != null)
+		{
+			Map<String,String> privateParams = new HashMap<String,String>();
+			privateParams.put(PrivateMetadata.CONNECTION, connectionName);
+			infoList = config.getAttributeColumnInfo(publicParams, privateParams);
+		}
+		else
+		{
+			infoList = config.getAttributeColumnInfo(publicParams);
+		}
+		Set<String> nameSet = new HashSet<String>();
+		for (AttributeColumnInfo info : infoList)
+			nameSet.add(info.publicMetadata.get(PublicMetadata.DATATABLE));
+		String[] names = nameSet.toArray(new String[0]);
+		Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
+		return names;
+	}
+	
+	// shortcut for calling the Map<String,String> version of this function
+	@Deprecated public List<AttributeColumnInfo> getDataTableInfo(ISQLConfig config, String dataTableName) throws RemoteException
+	{
+		Map<String, String> metadataQueryParams = new HashMap<String, String>(1);
+		metadataQueryParams.put(PublicMetadata.DATATABLE, dataTableName);
+		return config.getAttributeColumnInfo(metadataQueryParams);
+	}
+	
 	/**
 	 * This function copies all connections, dataTables, and geometryCollections from one ISQLConfig to another.
 	 * @param source A configuration to copy from.
@@ -204,16 +262,13 @@ public class SQLConfigUtils
 	 * @author Andrew Wilkinson
 	 * @author Andy Dufilie
 	 */
-	public synchronized static int migrateSQLConfig( ISQLConfig source, ISQLConfig destination) throws RemoteException, SQLException
+	@SuppressWarnings("deprecation")
+	public synchronized static int migrateSQLConfig(ISQLConfig source, SQLConfig destination) throws RemoteException, SQLException
 	{
 		System.out.println(String.format("Migrating from %s to %s", source.getClass().getCanonicalName(), destination.getClass().getCanonicalName()));
 		
 		DebugTimer timer = new DebugTimer();
-		Connection conn = null;
-		if (destination instanceof DatabaseConfig)
-			conn = ((DatabaseConfig)destination).getConnection();
-		if (destination instanceof SQLConfig)
-			conn = ((SQLConfig)destination).getConnection();
+		Connection conn = destination.getConnection();
 		Savepoint savePoint = null;
 		int count = 0;
 		try
@@ -224,40 +279,45 @@ public class SQLConfigUtils
 				savePoint = conn.setSavepoint("migrateSQLConfig");
 			}
 
-			// add connections
-//			List<String> connNames = source.getConnectionNames();
-//			for (int i = 0; i < connNames.size(); i++)
-//				count += migrateSQLConfigEntry(source, destination, ISQLConfig.ENTRYTYPE_CONNECTION, connNames.get(i));
-
-			// add geometry collections
-			List<String> geoNames = source.getGeometryCollectionNames(null);
-			timer.report("begin "+geoNames.size()+" geom names");
-			int printInterval = Math.max(1, geoNames.size() / 50);
-			for (int i = 0; i < geoNames.size(); i++)
+			if (source instanceof IDeprecatedSQLConfig)
 			{
-				try
+				IDeprecatedSQLConfig depSource = (IDeprecatedSQLConfig)source;
+				// add geometry collections
+				List<String> geoNames = depSource.getGeometryCollectionNames(null);
+				timer.report("begin "+geoNames.size()+" geom names");
+				int printInterval = Math.max(1, geoNames.size() / 50);
+				for (int i = 0; i < geoNames.size(); i++)
 				{
 					if (i % printInterval == 0)
 						System.out.println("Migrating geometry collection " + (i+1) + "/" + geoNames.size());
-					count += migrateSQLConfigEntry(source, destination, SQLConfigXML.ENTRYTYPE_GEOMETRYCOLLECTION, geoNames.get(i));
+					destination.addAttributeColumn(depSource.getGeometryCollectionInfo(geoNames.get(i)).getAttributeColumnInfo());
 				}
-				catch (InvalidParameterException e)
-				{
-					throw new RuntimeException("Unexpected error", e);
-				}
+				timer.report("done migrating geom collections");
 			}
-			timer.report("done migrating geom collections");
 
 			// add columns
-			Map<String,String> queryParams = new HashMap<String,String>();
-			List<AttributeColumnInfo> infoList = source.getAttributeColumnInfo(queryParams);
+			List<AttributeColumnInfo> infoList = source.getAttributeColumnInfo(new HashMap<String,String>());
 			timer.report("begin "+infoList.size()+" columns");
-			printInterval = Math.max(1, infoList.size() / 50);
+			int printInterval = Math.max(1, infoList.size() / 50);
 			for( int i = 0; i < infoList.size(); i++)
 			{
 				AttributeColumnInfo info = infoList.get(i);
+				if (info.description == null && source instanceof IDeprecatedSQLConfig)
+				{
+					// prepare the description of the column
+					String dataTable = info.publicMetadata.get(PublicMetadata.DATATABLE);
+					String name = info.publicMetadata.get(PublicMetadata.NAME);
+					String description = String.format("dataTable = \"%s\", name = \"%s\"", dataTable, name);
+					String year = info.publicMetadata.get(PublicMetadata.YEAR);
+					if (year != null && year.length() > 0)
+						description += String.format(", year = \"%s\"", year);
+					info.description = description;
+				}
 				if (i % printInterval == 0)
-					System.out.println("Migrating column " + (i+1) + "/" + infoList.size() + ": " + info.getAllMetadata());
+					System.out.println(String.format(
+						"Migrating column %s/%s, privateMetadata: %s, publicMetadata: %s",
+						i + 1, infoList.size(), info.privateMetadata, info.publicMetadata
+					));
 				destination.addAttributeColumn(info);
 			}
 			count += infoList.size();
@@ -286,88 +346,25 @@ public class SQLConfigUtils
 		}
 		return count;
 	}
-	public synchronized static int migrateSQLConfigEntry( ISQLConfig source, ISQLConfig destination, String entryType, String entryName) throws InvalidParameterException, RemoteException
-	{
-		if (entryType.equalsIgnoreCase(SQLConfigXML.ENTRYTYPE_CONNECTION))
-		{
-			// do nothing if entry doesn't exist in source
-			if (ListUtils.findString(entryName, source.getConnectionNames()) < 0)
-				return 0;
-			// save info from source before removing from destination, just in case source==destination
-			ConnectionInfo info = source.getConnectionInfo(entryName);
-			destination.removeConnection(entryName);
-			destination.addConnection(info);
-			return 1;
-		}
-		else if (entryType.equalsIgnoreCase(SQLConfigXML.ENTRYTYPE_GEOMETRYCOLLECTION))
-		{
-			// do nothing if entry doesn't exist in source
-			if (ListUtils.findString(entryName, source.getGeometryCollectionNames(null)) < 0)
-				return 0;
-			// save info from source before removing from destination, just in case source==destination
-			DebugTimer timer = new DebugTimer();
-			GeometryCollectionInfo info = source.getGeometryCollectionInfo(entryName);
-			timer.lap("getGeometryCollectionInfo "+entryName);
-			destination.removeGeometryCollection(entryName);
-			timer.lap("removeGeometryCollection "+entryName);
-			destination.addGeometryCollection(info);
-			timer.report("addGeometryCollection "+entryName);
-			return 1;
-		}
-		else if (entryType.equalsIgnoreCase(SQLConfigXML.ENTRYTYPE_DATATABLE))
-		{
-			// do nothing if entry doesn't exist in source
-			if (ListUtils.findString(entryName, source.getDataTableNames(null)) < 0)
-				return 0;
-			// save info from source before removing from destination, just in case source==destination
-			DebugTimer timer = new DebugTimer();
-			List<AttributeColumnInfo> columns = source.getAttributeColumnInfo(entryName);
-			timer.lap("getAttributeColumnInfo "+entryName +": "+columns.size());
-			destination.removeDataTable(entryName);
-			timer.lap("removeDataTable "+entryName);
-			for( int i = 0; i < columns.size(); i++ )
-			{
-				destination.addAttributeColumn(columns.get(i));
-				timer.report("addAttributeColumn "+i+"/"+columns.size());
-			}
-			return columns.size();
-		}
-		else
-			throw new InvalidParameterException(String.format("Unable to save configuration entry of type \"%s\".", entryType));
-	}
 
+	/**
+	 * This will return true if the specified connection has permission to modify the specified dataTable entry.
+	 */
+	public static boolean userCanModifyAttributeColumn(ISQLConfig config, String connectionName, int id) throws RemoteException
+	{
+		// true if entry doesn't exist or if user has permission
+		ConnectionInfo connInfo = config.getConnectionInfo(connectionName);
+		if (connInfo == null)
+			return false;
+		if (connInfo.is_superuser)
+			return true;
+		AttributeColumnInfo attrInfo = config.getAttributeColumnInfo(id);
+		return (attrInfo == null) || (attrInfo.privateMetadata.get(PrivateMetadata.CONNECTION) == connectionName);
+	}
+	
 	public static class InvalidParameterException extends Exception
 	{
 		private static final long serialVersionUID = 6290284095499981871L;
 		public InvalidParameterException(String msg) { super(msg); }
-	}
-
-	
-	/**
-	 * This will return true if the specified connection has permission to modify the specified dataTable entry.
-	 */
-	public static boolean userCanModifyDataTable(ISQLConfig config, String connectionName, String dataTableName) throws RemoteException
-	{
-		// true if entry doesn't exist or if user has permission
-		ConnectionInfo info = config.getConnectionInfo(connectionName);
-		if (info == null)
-			return false;
-		return info.is_superuser
-			|| ListUtils.findIgnoreCase(dataTableName, config.getDataTableNames(null)) < 0
-			|| ListUtils.findIgnoreCase(dataTableName, config.getDataTableNames(connectionName)) >= 0;
-	}
-	
-	/**
-	 * This will return true if the specified connection has permission to modify the specified dataTable entry.
-	 */
-	public static boolean userCanModifyGeometryCollection(ISQLConfig config, String connectionName, String geometryCollectionName) throws RemoteException
-	{
-		// true if entry doesn't exist or if user has permission
-		ConnectionInfo info = config.getConnectionInfo(connectionName);
-		if (info == null)
-			return false;
-		return info.is_superuser
-		|| ListUtils.findIgnoreCase(geometryCollectionName, config.getGeometryCollectionNames(null)) < 0
-		|| ListUtils.findIgnoreCase(geometryCollectionName, config.getGeometryCollectionNames(connectionName)) >= 0;
 	}
 }

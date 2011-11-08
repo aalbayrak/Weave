@@ -33,8 +33,7 @@ import weave.utils.ListUtils;
 import weave.utils.SQLUtils;
 
 /**
- * ISQLConfig An interface to retrieve strings from a configuration file. TODO:
- * needs documentation
+ * ISQLConfig An interface to retrieve strings from a configuration file.
  * 
  * @author Andy Dufilie
  */
@@ -49,69 +48,14 @@ public interface ISQLConfig
 	Document getDocument() throws RemoteException;
 
 	/**
-	 * Gets the display name of for the server in which this configuration
-	 * lives.
-	 */
-	@Deprecated
-	String getServerName() throws RemoteException;
-
-	/**
-	 * Returns the name of the SQL table which stores the access log.
-	 */
-	@Deprecated
-	String getAccessLogConnectionName() throws RemoteException;
-
-	/**
-	 * Returns the name of the SQL table which stores the access log.
-	 */
-	@Deprecated
-	String getAccessLogSchema() throws RemoteException;
-
-	/**
-	 * Returns the name of the SQL table which stores the access log.
-	 */
-	@Deprecated
-	String getAccessLogTable() throws RemoteException;
-
-	/**
-	 * Lists all keyTypes stored in this configuration
-	 */
-	List<String> getKeyTypes() throws RemoteException;
-
-	/**
 	 * Gets the names of all connections in this configuration
 	 */
 	List<String> getConnectionNames() throws RemoteException;
 
 	/**
-	 * Gets the names of all geometry collections in this configuration
-	 * @param connectionName A connection used as a filter, or null for no filter.
-	 */
-	@Deprecated
-	List<String> getGeometryCollectionNames(String connectionName) throws RemoteException;
-
-	/**
-	 * Gets the names of all data tables in this configuration
-	 * @param connectionName A connection used as a filter, or null for no filter.
-	 */
-	List<String> getDataTableNames(String connectionName) throws RemoteException;
-
-	/**
 	 * Removes the connection with the given name from this configuration
 	 */
 	void removeConnection(String name) throws RemoteException;
-
-	/**
-	 * Removes the geometry collection with the given name from this
-	 * configuration
-	 */
-	@Deprecated
-	void removeGeometryCollection(String name) throws RemoteException;
-
-	/**
-	 * Removes the data table with the given name from this configuration
-	 */
-	void removeDataTable(String name) throws RemoteException;
 
 	/**
 	 * This adds a connection to the configuration.
@@ -134,49 +78,39 @@ public interface ISQLConfig
 	ConnectionInfo getConnectionInfo(String connectionName) throws RemoteException;
 
 	/**
-	 * This adds a geometryCollection tag to the configuration.
-	 * 
-	 * @param geometryCollectionInfo
-	 *            The definition of the geometryCollection entry.
-	 */
-	@Deprecated
-	void addGeometryCollection(GeometryCollectionInfo geometryCollectionInfo) throws RemoteException;
-
-	/**
-	 * Looks up a geometry collection in this configuration by name
-	 * 
-	 * @param geometryCollection
-	 *            The name of a geometryCollection configuration entry.
-	 * @return An object containing the configuration for the specified
-	 *         geometryCollection.
-	 * @throws RemoteException
-	 *             if the info could not be retrieved.
-	 */
-	GeometryCollectionInfo getGeometryCollectionInfo(String geometryCollectionName) throws RemoteException;
-
-	/**
 	 * This adds an attributeColumn tag to a dataTable tag.
 	 * 
 	 * @param attributeColumnInfo
 	 *            The definition of the attributeColumn entry.
 	 */
-	void addAttributeColumn(AttributeColumnInfo attributeColumnInfo) throws RemoteException;
+	int addAttributeColumn(AttributeColumnInfo attributeColumnInfo) throws RemoteException;
 
 	/**
 	 * list all attributeColumn entries in a dataTable matching given metadata
 	 * values. This metadata may include "name" and "dataTable".
 	 */
-	List<AttributeColumnInfo> getAttributeColumnInfo(Map<String, String> metadataQueryParams) throws RemoteException;
-
 	/**
-	 * Looks up the list of all attributeColumn entries in a dataTable by name.
-	 * This is a shortcut for calling getAttributeColumnInfo(Map<String,String>)
-	 * with a dataTable name specified.
+	 * @param metadataQueryParams A list of metadata requirements used to filter the results. 
+	 * @return A list of AttributeColumnInfo objects that match the specified filter criteria.
+	 * @throws RemoteException
 	 */
-	@Deprecated
-	List<AttributeColumnInfo> getAttributeColumnInfo(String dataTableName) throws RemoteException;
-
+	List<AttributeColumnInfo> getAttributeColumnInfo(Map<String, String> metadataQueryParams) throws RemoteException;
 	
+	List<AttributeColumnInfo> getAttributeColumnInfo(Map<String, String> metadataQueryParams, Map<String,String> privateMetadataQueryParams) throws RemoteException;
+	
+	/**
+	 * @param id The ID of an attribute column.
+	 * @return The AttributeColumnInfo object identified by the id, or null if it doesn't exist.
+	 * @throws RemoteException
+	 */
+	AttributeColumnInfo getAttributeColumnInfo(int id) throws RemoteException;
+	
+	/**
+	 * @param id The ID of the attribute column entry to remove.
+	 * @throws RemoteException
+	 */
+	void removeAttributeColumnInfo(int id) throws RemoteException;
+
 	/**
 	 * @return true if this ISQLConfig object is successfully connected to the database using DatabaseConfigInfo.
 	 */
@@ -204,10 +138,6 @@ public interface ISQLConfig
 		 */
 		public String connection;
 		public String schema;
-		
-		public String geometryConfigTable, dataConfigTable; // not used in new implementation
-		
-		public String dataCategoryTable; // to be used with server-side hierarchy
 	}
 
 	/**
@@ -258,7 +188,7 @@ public interface ISQLConfig
 		static public final String TABLEPREFIX = "tablePrefix"; // used for geometry column
 		@Deprecated static public final String IMPORTNOTES = "importNotes"; // used for geometry column
 		
-		static public boolean isPrivate(String propertyName)
+		@Deprecated static public boolean isPrivate(String propertyName)
 		{
 			String[] names = {CONNECTION, SQLQUERY, SQLPARAMS, SQLRESULT, SCHEMA, TABLEPREFIX, IMPORTNOTES};
 			return ListUtils.findString(propertyName, names) >= 0;
@@ -271,7 +201,6 @@ public interface ISQLConfig
 		static public final String KEYTYPE = "keyType";
 		static public final String DATATYPE = "dataType";
 		static public final String DATATABLE = "dataTable";
-		@Deprecated static public final String GEOMETRYCOLLECTION = "geometryCollection";
 		static public final String PROJECTION = "projection";
 		static public final String YEAR = "year";
 		static public final String CATEGORY_ID = "category_id";
@@ -280,19 +209,6 @@ public interface ISQLConfig
 		static public final String TITLE = "title";
 		static public final String NUMBER = "number";
 		static public final String STRING = "string";
-		
-		/**
-		 * This is a list of metadata property names used in the old implementation of ISQLConfig
-		 */
-		static public final String[] names = {
-			NAME, KEYTYPE, DATATYPE, DATATABLE, GEOMETRYCOLLECTION, YEAR, CATEGORY_ID, MIN, MAX, TITLE, NUMBER, STRING
-		};
-	}
-	
-	@Deprecated
-	static public class GeometryCollectionInfo
-	{
-		public String name = "", connection = "", schema = "", tablePrefix = "", keyType = "", projection = "", importNotes = "";
 	}
 	
 	static public class DataType
@@ -337,12 +253,10 @@ public interface ISQLConfig
 		public Map<String,String> privateMetadata;
 		public Map<String,String> publicMetadata;
 		
-		public AttributeColumnInfo(int id, String description, Map<String, String> privateMetadata, Map<String, String> publicMetadata)
+		public AttributeColumnInfo(int id, String description)
 		{
 			this.id = id;
 			this.description = description;
-			this.privateMetadata = privateMetadata;
-			this.publicMetadata = publicMetadata;
 		}
 		
 		public String getConnectionName()
