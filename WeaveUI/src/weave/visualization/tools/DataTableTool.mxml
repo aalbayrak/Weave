@@ -53,7 +53,7 @@ along with Weave.  If not, see <http://www.gnu.org/licenses/>.
 									   headerShift="handleColumnReorder(event)"
 									   headerRelease="handleHeaderRelease(event)"
 									   paddingBottom="0" paddingTop="0" paddingLeft="0" paddingRight="0"
-									   
+									   								   
 									   fontWeight="normal"
 									   alternatingItemColors="{[0xffffff, 0xEEF6FF]}"
 									   rollOverColor="0xDADAFF"
@@ -782,6 +782,20 @@ along with Weave.  If not, see <http://www.gnu.org/licenses/>.
 				dataGrid.lockedColumnCount = lockedColumns.value;
 			}
 			
+			public const dataFontColor:LinkableNumber = registerLinkableChild(this, new LinkableNumber(0), modifyFontColor);
+ 			public const dataBackColor1:LinkableNumber = registerLinkableChild(this, new LinkableNumber(0xffffff), modifyBackColor);
+			public const dataBackColor2:LinkableNumber = registerLinkableChild(this, new LinkableNumber(0xEEF6FF), modifyBackColor);
+			
+			private function modifyFontColor():void
+			{
+				this.dataGrid.setStyle("color",dataFontColor.value);
+			}
+			
+			private function modifyBackColor():void
+			{
+				this.dataGrid.setStyle("alternatingItemColors",[dataBackColor1.value,dataBackColor2.value]);
+			}
+			
 			
 		]]>
 	</mx:Script>
@@ -790,8 +804,22 @@ along with Weave.  If not, see <http://www.gnu.org/licenses/>.
 			<ui:ColumnListComponent id="dimensionsList"  backgroundAlpha="0.7" height="100%" width="100%" label="Columns"/>
 			<mx:Button label="Add Image Column" click="addImageColumn()" />
 			<mx:CheckBox id="showControlsCheckBox" label="Show controls on panel"/>
-			<mx:CheckBox id="showFiltersCheckBox" label="Show Filters on panel"/>
-			<mx:CheckBox change="handleKeyColumnCheckBox()" id="showKeyColumnCheckBox" label="Show Key Column"/>
+			<mx:HBox>
+				<mx:CheckBox id="showFiltersCheckBox" label="Show Filters on panel"/>
+				<mx:Spacer width="232" />
+				<mx:ColorPicker id="fontColors" creationComplete="linkBindableProperty(dataFontColor,event.target,'selectedColor');"/>
+				<mx:Label text="Font Color" />
+			</mx:HBox>
+			<mx:HBox>
+				<mx:CheckBox change="handleKeyColumnCheckBox()" id="showKeyColumnCheckBox" label="Show Key Column"/>
+				<mx:Spacer width="250" />
+				<mx:VBox>
+					<mx:ColorPicker id="backColors" selectedColor="0xffffff" creationComplete="linkBindableProperty(dataBackColor1,event.target,'selectedColor');"/>
+					<mx:Label text="Color 1" />
+					<mx:ColorPicker id="backColors2" selectedColor="0xEEF6FF" creationComplete="linkBindableProperty(dataBackColor2,event.target,'selectedColor');"/>
+					<mx:Label text="Color 2" />
+				</mx:VBox>
+			</mx:HBox>
 			<mx:CheckBox label="Export keys with data" creationComplete="linkBindableProperty(exportKeys, event.target, 'selected');"/>
 			<mx:Button label="Export Data..." click="exportCSV()" />
 			<mx:HBox>
